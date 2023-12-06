@@ -46,29 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFormClients.cs">
+    <Compile Include="AddFormProjects.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormClients.Designer.cs">
-      <DependentUpon>AddFormClients.cs</DependentUpon>
+    <Compile Include="AddFormProjects.Designer.cs">
+      <DependentUpon>AddFormProjects.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormTours.cs">
+    <Compile Include="AddFormCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormTours.Designer.cs">
-      <DependentUpon>AddFormTours.cs</DependentUpon>
+    <Compile Include="AddFormCustomers.Designer.cs">
+      <DependentUpon>AddFormCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormBookings.cs">
+    <Compile Include="AddFormEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormBookings.Designer.cs">
-      <DependentUpon>AddFormBookings.cs</DependentUpon>
+    <Compile Include="AddFormEmployees.Designer.cs">
+      <DependentUpon>AddFormEmployees.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormPayments.cs">
+    <Compile Include="AddFormMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormPayments.Designer.cs">
-      <DependentUpon>AddFormPayments.cs</DependentUpon>
+    <Compile Include="AddFormMaterials.Designer.cs">
+      <DependentUpon>AddFormMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddFormsProjectMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFormsProjectMaterials.Designer.cs">
+      <DependentUpon>AddFormsProjectMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
@@ -91,17 +97,20 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddFormClients.resx">
-      <DependentUpon>AddFormClients.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormProjects.resx">
+      <DependentUpon>AddFormProjects.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormTours.resx">
-      <DependentUpon>AddFormTours.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormCustomers.resx">
+      <DependentUpon>AddFormCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormBookings.resx">
-      <DependentUpon>AddFormBookings.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormEmployees.resx">
+      <DependentUpon>AddFormEmployees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormPayments.resx">
-      <DependentUpon>AddFormPayments.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormMaterials.resx">
+      <DependentUpon>AddFormMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFormsProjectMaterials.resx">
+      <DependentUpon>AddFormsProjectMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

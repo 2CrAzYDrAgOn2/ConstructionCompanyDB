@@ -1015,7 +1015,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormClients addForm = new AddFormClients();
+                AddFormProjects addForm = new AddFormProjects();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1033,7 +1033,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormTours addForm = new AddFormTours();
+                AddFormCustomers addForm = new AddFormTours();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1051,7 +1051,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormBookings addForm = new AddFormBookings();
+                AddFormEmployees addForm = new AddFormEmployees();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1069,7 +1069,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormPayments addForm = new AddFormPayments();
+                AddFormMaterials addForm = new AddFormMaterials();
                 addForm.Show();
             }
             catch (Exception ex)

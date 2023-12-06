@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace test_DataBase
 {
-    public partial class AddFormClients : Form
+    public partial class AddFormProjects : Form
     {
         private readonly DataBase dataBase = new DataBase();
 
-        public AddFormClients()
+        public AddFormProjects()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
