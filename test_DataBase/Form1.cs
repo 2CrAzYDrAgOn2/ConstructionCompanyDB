@@ -39,9 +39,9 @@ namespace test_DataBase
         {
             try
             {
-                dataGridViewDormitories.Columns.Add("DorimitoryID", "Номер");
-                dataGridViewDormitories.Columns.Add("DormitoryName", "Название общежития");
-                dataGridViewDormitories.Columns.Add("IsNew", String.Empty);
+                dataGridViewClients.Columns.Add("DorimitoryID", "Номер");
+                dataGridViewClients.Columns.Add("DormitoryName", "Название общежития");
+                dataGridViewClients.Columns.Add("IsNew", String.Empty);
                 dataGridViewFaculties.Columns.Add("FacultyID", "Номер");
                 dataGridViewFaculties.Columns.Add("FacultyName", "Название факультета");
                 dataGridViewFaculties.Columns.Add("IsNew", String.Empty);
@@ -90,8 +90,8 @@ namespace test_DataBase
         {
             try
             {
-                textBoxDormitoryID.Text = "";
-                textBoxDormitoryName.Text = "";
+                textBoxClientID.Text = "";
+                textBoxFirstName.Text = "";
                 textBoxFacultyID.Text = "";
                 textBoxFacultyName.Text = "";
                 textBoxGroupID.Text = "";
@@ -212,7 +212,7 @@ namespace test_DataBase
             try
             {
                 CreateColumns();
-                RefreshDataGrid(dataGridViewDormitories, "Dormitories");
+                RefreshDataGrid(dataGridViewClients, "Dormitories");
                 RefreshDataGrid(dataGridViewFaculties, "Faculties");
                 RefreshDataGrid(dataGridViewGroups, "Groups");
                 RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
@@ -240,8 +240,8 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        textBoxDormitoryID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxDormitoryName.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxClientID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxFirstName.Text = dataGridViewRow.Cells[1].Value.ToString();
                         break;
 
                     case "dataGridViewFaculties":
@@ -311,7 +311,7 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        string searchStringDormitories = $"select * from Dormitories where concat (DormitoryID, DormitoryName) like '%" + textBoxSearchDormitories.Text + "%'";
+                        string searchStringDormitories = $"select * from Dormitories where concat (DormitoryID, DormitoryName) like '%" + textBoxSearchClients.Text + "%'";
                         SqlCommand sqlCommandDormitories = new SqlCommand(searchStringDormitories, dataBase.GetConnection());
                         dataBase.OpenConnection();
                         SqlDataReader sqlDataReaderDormitories = sqlCommandDormitories.ExecuteReader();
@@ -738,8 +738,8 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        var dormitoryID = textBoxDormitoryID.Text;
-                        var dormitoryName = textBoxDormitoryName.Text;
+                        var dormitoryID = textBoxClientID.Text;
+                        var dormitoryName = textBoxFirstName.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(dormitoryID, dormitoryName);
                         dataGridView.Rows[selectedRowIndex].Cells[2].Value = RowState.Modified;
                         break;
@@ -825,7 +825,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewDormitories, selectedRow);
+                    DataGridView_CellClick(dataGridViewClients, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -990,7 +990,7 @@ namespace test_DataBase
         {
             try
             {
-                RefreshDataGrid(dataGridViewDormitories, "Dormitories");
+                RefreshDataGrid(dataGridViewClients, "Dormitories");
                 RefreshDataGrid(dataGridViewFaculties, "Faculties");
                 RefreshDataGrid(dataGridViewGroups, "Groups");
                 RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
@@ -1015,7 +1015,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormDormitories addForm = new AddFormDormitories();
+                AddFormClients addForm = new AddFormClients();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1033,7 +1033,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormFaculties addForm = new AddFormFaculties();
+                AddFormTours addForm = new AddFormTours();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1051,7 +1051,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormGroups addForm = new AddFormGroups();
+                AddFormBookings addForm = new AddFormBookings();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1069,7 +1069,7 @@ namespace test_DataBase
         {
             try
             {
-                AddFormHousingOrders addForm = new AddFormHousingOrders();
+                AddFormPayments addForm = new AddFormPayments();
                 addForm.Show();
             }
             catch (Exception ex)
@@ -1159,7 +1159,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewDormitories);
+                Search(dataGridViewClients);
             }
             catch (Exception ex)
             {
@@ -1295,7 +1295,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewDormitories);
+                DeleteRow(dataGridViewClients);
                 ClearFields();
             }
             catch (Exception ex)
@@ -1439,7 +1439,7 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewDormitories);
+                UpdateBase(dataGridViewClients);
             }
             catch (Exception ex)
             {
@@ -1575,7 +1575,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewDormitories);
+                Change(dataGridViewClients);
                 ClearFields();
             }
             catch (Exception ex)

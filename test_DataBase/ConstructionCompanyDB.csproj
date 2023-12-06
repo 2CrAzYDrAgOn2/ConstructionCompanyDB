@@ -46,53 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddFormDormitories.cs">
+    <Compile Include="AddFormClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormDormitories.Designer.cs">
-      <DependentUpon>AddFormDormitories.cs</DependentUpon>
+    <Compile Include="AddFormClients.Designer.cs">
+      <DependentUpon>AddFormClients.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormFaculties.cs">
+    <Compile Include="AddFormTours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormFaculties.Designer.cs">
-      <DependentUpon>AddFormFaculties.cs</DependentUpon>
+    <Compile Include="AddFormTours.Designer.cs">
+      <DependentUpon>AddFormTours.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormGroups.cs">
+    <Compile Include="AddFormBookings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormGroups.Designer.cs">
-      <DependentUpon>AddFormGroups.cs</DependentUpon>
+    <Compile Include="AddFormBookings.Designer.cs">
+      <DependentUpon>AddFormBookings.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormHousingPayments.cs">
+    <Compile Include="AddFormPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormHousingPayments.Designer.cs">
-      <DependentUpon>AddFormHousingPayments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddFormHousingOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddFormHousingOrders.Designer.cs">
-      <DependentUpon>AddFormHousingOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddFormRoomAssignment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddFormRoomAssignment.Designer.cs">
-      <DependentUpon>AddFormRoomAssignment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddFormRooms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddFormRooms.Designer.cs">
-      <DependentUpon>AddFormRooms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddFormStudents.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddFormStudents.Designer.cs">
-      <DependentUpon>AddFormStudents.cs</DependentUpon>
+    <Compile Include="AddFormPayments.Designer.cs">
+      <DependentUpon>AddFormPayments.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
@@ -115,29 +91,17 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddFormDormitories.resx">
-      <DependentUpon>AddFormDormitories.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormClients.resx">
+      <DependentUpon>AddFormClients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormFaculties.resx">
-      <DependentUpon>AddFormFaculties.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormTours.resx">
+      <DependentUpon>AddFormTours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormGroups.resx">
-      <DependentUpon>AddFormGroups.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormBookings.resx">
+      <DependentUpon>AddFormBookings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormHousingPayments.resx">
-      <DependentUpon>AddFormHousingPayments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddFormHousingOrders.resx">
-      <DependentUpon>AddFormHousingOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddFormRoomAssignment.resx">
-      <DependentUpon>AddFormRoomAssignment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddFormRooms.resx">
-      <DependentUpon>AddFormRooms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddFormStudents.resx">
-      <DependentUpon>AddFormStudents.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormPayments.resx">
+      <DependentUpon>AddFormPayments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
