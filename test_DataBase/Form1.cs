@@ -90,8 +90,8 @@ namespace test_DataBase
         {
             try
             {
-                textBoxClientID.Text = "";
-                textBoxFirstName.Text = "";
+                textBoxProjectID.Text = "";
+                textBoxProjectName.Text = "";
                 textBoxFacultyID.Text = "";
                 textBoxFacultyName.Text = "";
                 textBoxGroupID.Text = "";
@@ -100,8 +100,8 @@ namespace test_DataBase
                 textBoxOrderNumber.Text = "";
                 textBoxFacultyIDHousingOrders.Text = "";
                 textBoxStudentIDHousingOrders.Text = "";
-                textBoxPaymentID.Text = "";
-                textBoxPaymentDate.Text = "";
+                textBoxMaterialID.Text = "";
+                textBoxUnitPrice.Text = "";
                 textBoxPaidAmount.Text = "";
                 textBoxStudentIDHousingPayments.Text = "";
                 textBoxRoomAssignmentID.Text = "";
@@ -240,8 +240,8 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        textBoxClientID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxFirstName.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxProjectID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxProjectName.Text = dataGridViewRow.Cells[1].Value.ToString();
                         break;
 
                     case "dataGridViewFaculties":
@@ -262,8 +262,8 @@ namespace test_DataBase
                         break;
 
                     case "dataGridViewHousingPayments":
-                        textBoxPaymentID.Text = dataGridViewRow.Cells[0].Value.ToString();
-                        textBoxPaymentDate.Text = dataGridViewRow.Cells[1].Value.ToString();
+                        textBoxMaterialID.Text = dataGridViewRow.Cells[0].Value.ToString();
+                        textBoxUnitPrice.Text = dataGridViewRow.Cells[1].Value.ToString();
                         textBoxPaidAmount.Text = dataGridViewRow.Cells[2].Value.ToString();
                         textBoxStudentIDHousingPayments.Text = dataGridViewRow.Cells[3].Value.ToString();
                         break;
@@ -738,8 +738,8 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        var dormitoryID = textBoxClientID.Text;
-                        var dormitoryName = textBoxFirstName.Text;
+                        var dormitoryID = textBoxProjectID.Text;
+                        var dormitoryName = textBoxProjectName.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(dormitoryID, dormitoryName);
                         dataGridView.Rows[selectedRowIndex].Cells[2].Value = RowState.Modified;
                         break;
@@ -768,8 +768,8 @@ namespace test_DataBase
                         break;
 
                     case "dataGridViewHousingPayments":
-                        var paymentID = textBoxPaymentID.Text;
-                        var paymentDate = textBoxPaymentDate.Text;
+                        var paymentID = textBoxMaterialID.Text;
+                        var paymentDate = textBoxUnitPrice.Text;
                         var paidAmount = textBoxPaidAmount.Text;
                         var studentIDHousingPayments = textBoxStudentIDHousingPayments.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(paymentID, paymentDate, paidAmount, studentIDHousingPayments);
