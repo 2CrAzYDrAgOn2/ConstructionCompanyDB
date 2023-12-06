@@ -39,9 +39,9 @@ namespace test_DataBase
         {
             try
             {
-                dataGridViewClients.Columns.Add("DorimitoryID", "Номер");
-                dataGridViewClients.Columns.Add("DormitoryName", "Название общежития");
-                dataGridViewClients.Columns.Add("IsNew", String.Empty);
+                dataGridViewProjects.Columns.Add("DorimitoryID", "Номер");
+                dataGridViewProjects.Columns.Add("DormitoryName", "Название общежития");
+                dataGridViewProjects.Columns.Add("IsNew", String.Empty);
                 dataGridViewFaculties.Columns.Add("FacultyID", "Номер");
                 dataGridViewFaculties.Columns.Add("FacultyName", "Название факультета");
                 dataGridViewFaculties.Columns.Add("IsNew", String.Empty);
@@ -212,7 +212,7 @@ namespace test_DataBase
             try
             {
                 CreateColumns();
-                RefreshDataGrid(dataGridViewClients, "Dormitories");
+                RefreshDataGrid(dataGridViewProjects, "Dormitories");
                 RefreshDataGrid(dataGridViewFaculties, "Faculties");
                 RefreshDataGrid(dataGridViewGroups, "Groups");
                 RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
@@ -311,7 +311,7 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewDormitories":
-                        string searchStringDormitories = $"select * from Dormitories where concat (DormitoryID, DormitoryName) like '%" + textBoxSearchClients.Text + "%'";
+                        string searchStringDormitories = $"select * from Dormitories where concat (DormitoryID, DormitoryName) like '%" + textBoxSearchProjects.Text + "%'";
                         SqlCommand sqlCommandDormitories = new SqlCommand(searchStringDormitories, dataBase.GetConnection());
                         dataBase.OpenConnection();
                         SqlDataReader sqlDataReaderDormitories = sqlCommandDormitories.ExecuteReader();
@@ -825,7 +825,7 @@ namespace test_DataBase
                 selectedRow = e.RowIndex;
                 if (e.RowIndex >= 0)
                 {
-                    DataGridView_CellClick(dataGridViewClients, selectedRow);
+                    DataGridView_CellClick(dataGridViewProjects, selectedRow);
                 }
             }
             catch (Exception ex)
@@ -990,7 +990,7 @@ namespace test_DataBase
         {
             try
             {
-                RefreshDataGrid(dataGridViewClients, "Dormitories");
+                RefreshDataGrid(dataGridViewProjects, "Dormitories");
                 RefreshDataGrid(dataGridViewFaculties, "Faculties");
                 RefreshDataGrid(dataGridViewGroups, "Groups");
                 RefreshDataGrid(dataGridViewHousingOrders, "HousingOrders");
@@ -1159,7 +1159,7 @@ namespace test_DataBase
         {
             try
             {
-                Search(dataGridViewClients);
+                Search(dataGridViewProjects);
             }
             catch (Exception ex)
             {
@@ -1295,7 +1295,7 @@ namespace test_DataBase
         {
             try
             {
-                DeleteRow(dataGridViewClients);
+                DeleteRow(dataGridViewProjects);
                 ClearFields();
             }
             catch (Exception ex)
@@ -1439,7 +1439,7 @@ namespace test_DataBase
         {
             try
             {
-                UpdateBase(dataGridViewClients);
+                UpdateBase(dataGridViewProjects);
             }
             catch (Exception ex)
             {
@@ -1575,7 +1575,7 @@ namespace test_DataBase
         {
             try
             {
-                Change(dataGridViewClients);
+                Change(dataGridViewProjects);
                 ClearFields();
             }
             catch (Exception ex)
