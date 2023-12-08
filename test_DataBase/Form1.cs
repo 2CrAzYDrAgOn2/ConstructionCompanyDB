@@ -293,63 +293,63 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewProjects":
-                        string searchStringClients = $"select * from Clients where concat (ClientID, FirstName, LastName, Email, Phone) like '%" + textBoxSearchClients.Text + "%'";
-                        SqlCommand sqlCommandClients = new SqlCommand(searchStringClients, dataBase.GetConnection());
+                        string searchStringProjects = $"select * from Projects where concat (ProjectID, ProjectName, StartDate, EndDate, Budget, Status) like '%" + textBoxSearchProjects.Text + "%'";
+                        SqlCommand sqlCommandProjects = new SqlCommand(searchStringProjects, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderClients = sqlCommandClients.ExecuteReader();
-                        while (sqlDataReaderClients.Read())
+                        SqlDataReader sqlDataReaderProjects = sqlCommandProjects.ExecuteReader();
+                        while (sqlDataReaderProjects.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderClients);
+                            ReadSingleRow(dataGridView, sqlDataReaderProjects);
                         }
-                        sqlDataReaderClients.Close();
+                        sqlDataReaderProjects.Close();
                         break;
 
                     case "dataGridViewCustomers":
-                        string searchStringTours = $"select * from Tours where concat (TourID, TourName, Destination, StartDate, EndDate, Price) like '%" + textBoxSearchTours.Text + "%'";
-                        SqlCommand sqlCommandTours = new SqlCommand(searchStringTours, dataBase.GetConnection());
+                        string searchStringCustomers = $"select * from Customers where concat (CustomerID, CustomerName, ContactPerson, ContactNumber, Email) like '%" + textBoxSearchCustomers.Text + "%'";
+                        SqlCommand sqlCommandCustomers = new SqlCommand(searchStringCustomers, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderTours = sqlCommandTours.ExecuteReader();
-                        while (sqlDataReaderTours.Read())
+                        SqlDataReader sqlDataReaderCustomers = sqlCommandCustomers.ExecuteReader();
+                        while (sqlDataReaderCustomers.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderTours);
+                            ReadSingleRow(dataGridView, sqlDataReaderCustomers);
                         }
-                        sqlDataReaderTours.Close();
+                        sqlDataReaderCustomers.Close();
                         break;
 
                     case "dataGridViewEmployees":
-                        string searchStringBookings = $"select * from Bookings where concat (BookingID, ClientID, TourID, BookingDate, NumberOfPersons, TotalAmount) like '%" + textBoxSearchBookings.Text + "%'";
-                        SqlCommand sqlCommandBookings = new SqlCommand(searchStringBookings, dataBase.GetConnection());
+                        string searchStringEmployees = $"select * from Employees where concat (EmployeeID, FirstName, LastName, Position, HireDate, Salary, Email, PhoneNumber) like '%" + textBoxSearchEmployees.Text + "%'";
+                        SqlCommand sqlCommandEmployees = new SqlCommand(searchStringEmployees, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderBookings = sqlCommandBookings.ExecuteReader();
-                        while (sqlDataReaderBookings.Read())
+                        SqlDataReader sqlDataReaderEmployees = sqlCommandEmployees.ExecuteReader();
+                        while (sqlDataReaderEmployees.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderBookings);
+                            ReadSingleRow(dataGridView, sqlDataReaderEmployees);
                         }
-                        sqlDataReaderBookings.Close();
+                        sqlDataReaderEmployees.Close();
                         break;
 
                     case "dataGridViewMaterials":
-                        string searchStringPayments = $"select * from Payments where concat (PaymentID, BookingID, PaymentDate, Amount) like '%" + textBoxSearchPayments.Text + "%'";
-                        SqlCommand sqlCommandPayments = new SqlCommand(searchStringPayments, dataBase.GetConnection());
+                        string searchStringMaterials = $"select * from Materials where concat (MaterialID, MaterialName, UnitPrice, QuantinityInStock) like '%" + textBoxSearchMaterials.Text + "%'";
+                        SqlCommand sqlCommandMaterials = new SqlCommand(searchStringMaterials, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderPayments = sqlCommandPayments.ExecuteReader();
-                        while (sqlDataReaderPayments.Read())
+                        SqlDataReader sqlDataReaderMaterials = sqlCommandMaterials.ExecuteReader();
+                        while (sqlDataReaderMaterials.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderPayments);
+                            ReadSingleRow(dataGridView, sqlDataReaderMaterials);
                         }
-                        sqlDataReaderPayments.Close();
+                        sqlDataReaderMaterials.Close();
                         break;
 
                     case "dataGridViewProjectMaterials":
-                        string searchStringPayments = $"select * from Payments where concat (PaymentID, BookingID, PaymentDate, Amount) like '%" + textBoxSearchPayments.Text + "%'";
-                        SqlCommand sqlCommandPayments = new SqlCommand(searchStringPayments, dataBase.GetConnection());
+                        string searchStringProjectMaterials = $"select * from ProjectMaterials where concat (ProjectID, MaterialID, QuantinityUsed) like '%" + textBoxSearchProjectMaterials.Text + "%'";
+                        SqlCommand sqlCommandProjectMaterials = new SqlCommand(searchStringProjectMaterials, dataBase.GetConnection());
                         dataBase.OpenConnection();
-                        SqlDataReader sqlDataReaderPayments = sqlCommandPayments.ExecuteReader();
-                        while (sqlDataReaderPayments.Read())
+                        SqlDataReader sqlDataReaderProjectMaterials = sqlCommandProjectMaterials.ExecuteReader();
+                        while (sqlDataReaderProjectMaterials.Read())
                         {
-                            ReadSingleRow(dataGridView, sqlDataReaderPayments);
+                            ReadSingleRow(dataGridView, sqlDataReaderProjectMaterials);
                         }
-                        sqlDataReaderPayments.Close();
+                        sqlDataReaderProjectMaterials.Close();
                         break;
                 }
             }
@@ -437,72 +437,72 @@ namespace test_DataBase
                     switch (dataGridView.Name)
                     {
                         case "dataGridViewProjects":
-                            var rowStateClients = (RowState)dataGridView.Rows[index].Cells[6].Value;
-                            if (rowStateClients == RowState.Existed)
+                            var rowStateProjects = (RowState)dataGridView.Rows[index].Cells[6].Value;
+                            if (rowStateProjects == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateClients == RowState.Deleted)
+                            if (rowStateProjects == RowState.Deleted)
                             {
-                                var clientID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Clients where ClientID = {clientID}";
+                                var projectID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Projects where ClientID = {projectID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateClients == RowState.Modified)
+                            if (rowStateProjects == RowState.Modified)
                             {
-                                var clientID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var email = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var phone = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Clients set FirstName = '{firstName}', LastName = '{lastName}', Email = '{email}', Phone = '{phone}' where ClientID = '{clientID}'";
+                                var projectID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var projectName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var startDate = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var endDate = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var budget = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var status = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var changeQuery = $"update Projects set ProjectName = '{firstName}', StartDate = '{lastName}', EndDate = '{email}', Budget = '{phone}' where ProjectID = '{projectID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
                         case "dataGridViewCustomers":
-                            var rowStateTours = (RowState)dataGridView.Rows[index].Cells[5].Value;
-                            if (rowStateTours == RowState.Existed)
+                            var rowStateCustomers = (RowState)dataGridView.Rows[index].Cells[5].Value;
+                            if (rowStateCustomers == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateTours == RowState.Deleted)
+                            if (rowStateCustomers == RowState.Deleted)
                             {
                                 var tourID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Tours where TourID = {tourID}";
+                                var deleteQuery = $"delete from Customers where TourID = {tourID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateTours == RowState.Modified)
+                            if (rowStateCustomers == RowState.Modified)
                             {
                                 var tourID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var tourName = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var destination = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var startDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var endDate = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var price = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update Tours set TourName = '{tourName}', Destination = '{destination}', StartDate = '{startDate}', EndDate = '{endDate}', Price = '{price}' where TourID = '{tourID}'";
+                                var changeQuery = $"update Customers set TourName = '{tourName}', Destination = '{destination}', StartDate = '{startDate}', EndDate = '{endDate}', Price = '{price}' where TourID = '{tourID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
                         case "dataGridViewEmployees":
-                            var rowStateBookings = (RowState)dataGridView.Rows[index].Cells[8].Value;
-                            if (rowStateBookings == RowState.Existed)
+                            var rowStateEmployees = (RowState)dataGridView.Rows[index].Cells[8].Value;
+                            if (rowStateEmployees == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStateBookings == RowState.Deleted)
+                            if (rowStateEmployees == RowState.Deleted)
                             {
                                 var bookingID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Bookings where BookingID = {bookingID}";
+                                var deleteQuery = $"delete from Employees where BookingID = {bookingID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStateBookings == RowState.Modified)
+                            if (rowStateEmployees == RowState.Modified)
                             {
                                 var bookingID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
@@ -510,57 +510,58 @@ namespace test_DataBase
                                 var bookingDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var numberOfPersons = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var totalAmount = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update Bookings set ClientID = '{clientID}', TourID = '{tourID}', BookingDate = '{bookingDate}', NumberOfPersons = '{numberOfPersons}', TotalAmount = '{totalAmount}' where BookingID = '{bookingID}'";
+                                var totalAmount = dataGridView.Rows[index].Cells[6].Value.ToString();
+                                var totalAmount = dataGridView.Rows[index].Cells[7].Value.ToString();
+                                var changeQuery = $"update Employees set ClientID = '{clientID}', TourID = '{tourID}', BookingDate = '{bookingDate}', NumberOfPersons = '{numberOfPersons}', TotalAmount = '{totalAmount}' where BookingID = '{bookingID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
                         case "dataGridViewMaterials":
-                            var rowStatePayments = (RowState)dataGridView.Rows[index].Cells[4].Value;
-                            if (rowStatePayments == RowState.Existed)
+                            var rowStateMaterials = (RowState)dataGridView.Rows[index].Cells[4].Value;
+                            if (rowStateMaterials == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStatePayments == RowState.Deleted)
+                            if (rowStateMaterials == RowState.Deleted)
                             {
                                 var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Payments where PaymentID = {paymentID}";
+                                var deleteQuery = $"delete from Materials where PaymentID = {paymentID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStatePayments == RowState.Modified)
+                            if (rowStateMaterials == RowState.Modified)
                             {
                                 var paymentID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var bookingID = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var paymentDate = dataGridView.Rows[index].Cells[2].Value.ToString();
                                 var amount = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update Payments set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
+                                var changeQuery = $"update Materials set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             break;
 
                         case "dataGridViewProjectMaterials":
-                            var rowStatePayments = (RowState)dataGridView.Rows[index].Cells[3].Value;
-                            if (rowStatePayments == RowState.Existed)
+                            var rowStateProjectMaterials = (RowState)dataGridView.Rows[index].Cells[3].Value;
+                            if (rowStateProjectMaterials == RowState.Existed)
                             {
                                 continue;
                             }
-                            if (rowStatePayments == RowState.Deleted)
+                            if (rowStateProjectMaterials == RowState.Deleted)
                             {
                                 var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Payments where PaymentID = {paymentID}";
+                                var deleteQuery = $"delete from ProjectMaterials where PaymentID = {paymentID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
-                            if (rowStatePayments == RowState.Modified)
+                            if (rowStateProjectMaterials == RowState.Modified)
                             {
                                 var paymentID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var bookingID = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var paymentDate = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var amount = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update Payments set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
+                                var changeQuery = $"update ProjectMaterials set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -590,53 +591,54 @@ namespace test_DataBase
                 switch (dataGridView.Name)
                 {
                     case "dataGridViewProjects":
-                        var clientID = textBoxClientID.Text;
-                        var firstName = textBoxFirstName.Text;
-                        var lastName = textBoxLastName.Text;
-                        var email = textBoxEmail.Text;
-                        var phone = textBoxPhone.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(clientID, firstName, lastName, email, phone);
-                        dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
+                        var projectID = textBoxProjectID.Text;
+                        var projectName = textBoxProjectName.Text;
+                        var startDate = textBoxStartDate.Text;
+                        var endDate = textBoxEndDate.Text;
+                        var budget = textBoxBudget.Text;
+                        var status = textBoxStatus.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(projectID, projectName, startDate, endDate, budget, status);
+                        dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewCustomers":
-                        var tourID = textBoxTourID.Text;
-                        var tourName = textBoxTourName.Text;
-                        var destination = textBoxDestination.Text;
-                        var startDate = textBoxStartDate.Text;
-                        var endDate = textBoxEndDate.Text;
-                        var price = textBoxPrice.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(tourID, tourName, destination, startDate, endDate, price);
-                        dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
+                        var customerID = textBoxCustomerID.Text;
+                        var customerName = textBoxCustomerName.Text;
+                        var contactPerson = textBoxContactPerson.Text;
+                        var contactNumber = textBoxContactNumber.Text;
+                        var email = textBoxEmail.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(customerID, customerName, contactPerson, contactNumber, email);
+                        dataGridView.Rows[selectedRowIndex].Cells[5].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewEmployees":
-                        var bookingID = textBoxBookingID.Text;
-                        var clientIDBookings = textBoxClientIDBookings.Text;
-                        var tourIDBookings = textBoxTourIDBookings.Text;
-                        var bookingDate = textBoxBookingDate.Text;
-                        var numberOfPersons = textBoxNumberOfPersons.Text;
-                        var totalAmount = textBoxTotalAmount.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(bookingID, clientIDBookings, tourIDBookings, bookingDate, numberOfPersons, totalAmount);
-                        dataGridView.Rows[selectedRowIndex].Cells[6].Value = RowState.Modified;
+                        var employeeID = textBoxEmployeeID.Text;
+                        var firstName = textBoxFirstName.Text;
+                        var lastName = textBoxLastName.Text;
+                        var position = textBoxPosition.Text;
+                        var hireDate = textBoxHireDate.Text;
+                        var salary = textBoxSalary.Text;
+                        var employees = textBoxEmailEmployees.Text;
+                        var phoneNumber = textBoxPhoneNumber.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(employeeID, firstName, lastName, position, hireDate, salary, employees, phoneNumber);
+                        dataGridView.Rows[selectedRowIndex].Cells[8].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewMaterials":
-                        var paymentID = textBoxPaymentID.Text;
-                        var bookingIDPayments = textBoxBookingIDPayments.Text;
-                        var paymentDate = textBoxPaymentDate.Text;
-                        var amount = textBoxAmount.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingIDPayments, paymentDate, amount);
+                        var materialID = textBoxMaterialID.Text;
+                        var materialName = textBoxMaterialName.Text;
+                        var unitPrice = textBoxUnitPrice.Text;
+                        var quantinityInStock = textBoxQuantinityInStock.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(materialID, materialName, unitPrice, quantinityInStock);
                         dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewProjectMaterials":
-                        var paymentID = textBoxPaymentID.Text;
-                        var bookingIDPayments = textBoxBookingIDPayments.Text;
-                        var paymentDate = textBoxPaymentDate.Text;
-                        var amount = textBoxAmount.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(paymentID, bookingIDPayments, paymentDate, amount);
-                        dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
+                        var projectIDProjectMaterials = textBoxProjectIDProjectMaterials.Text;
+                        var materialIDProjectMaterials = textBoxMaterialIDProjectMaterials.Text;
+                        var quantinityUsed = textBoxQuantinityUsed.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(projectIDProjectMaterials, materialIDProjectMaterials, quantinityUsed);
+                        dataGridView.Rows[selectedRowIndex].Cells[3].Value = RowState.Modified;
                         break;
                 }
             }

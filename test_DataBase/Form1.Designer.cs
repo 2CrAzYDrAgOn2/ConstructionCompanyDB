@@ -125,7 +125,7 @@
             this.buttonSearchEmplpyees = new System.Windows.Forms.Button();
             this.buttonClearEmplpyees = new System.Windows.Forms.Button();
             this.buttonRefreshEmplpyees = new System.Windows.Forms.Button();
-            this.textBoxSearchEmplpyees = new System.Windows.Forms.TextBox();
+            this.textBoxSearchEmployees = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -1133,7 +1133,7 @@
             this.panel6.Controls.Add(this.buttonSearchEmplpyees);
             this.panel6.Controls.Add(this.buttonClearEmplpyees);
             this.panel6.Controls.Add(this.buttonRefreshEmplpyees);
-            this.panel6.Controls.Add(this.textBoxSearchEmplpyees);
+            this.panel6.Controls.Add(this.textBoxSearchEmployees);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
@@ -1172,13 +1172,13 @@
             this.buttonRefreshEmplpyees.UseVisualStyleBackColor = true;
             this.buttonRefreshEmplpyees.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
-            // textBoxSearchEmplpyees
+            // textBoxSearchEmployees
             // 
-            this.textBoxSearchEmplpyees.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSearchEmplpyees.Location = new System.Drawing.Point(599, 32);
-            this.textBoxSearchEmplpyees.Name = "textBoxSearchEmplpyees";
-            this.textBoxSearchEmplpyees.Size = new System.Drawing.Size(149, 33);
-            this.textBoxSearchEmplpyees.TabIndex = 1;
+            this.textBoxSearchEmployees.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSearchEmployees.Location = new System.Drawing.Point(599, 32);
+            this.textBoxSearchEmployees.Name = "textBoxSearchEmployees";
+            this.textBoxSearchEmployees.Size = new System.Drawing.Size(149, 33);
+            this.textBoxSearchEmployees.TabIndex = 1;
             // 
             // label10
             // 
@@ -1843,7 +1843,7 @@
         private System.Windows.Forms.Button buttonSearchEmplpyees;
         private System.Windows.Forms.Button buttonClearEmplpyees;
         private System.Windows.Forms.Button buttonRefreshEmplpyees;
-        private System.Windows.Forms.TextBox textBoxSearchEmplpyees;
+        private System.Windows.Forms.TextBox textBoxSearchEmployees;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel panel7;
