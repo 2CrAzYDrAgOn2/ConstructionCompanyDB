@@ -36,7 +36,7 @@ namespace test_DataBase
         {
             var login = textBoxLogin.Text;
             var password = textBoxPassword.Text;
-            string querystring = $"Insert into Registration(UserLogin, UserPassword) values('{login}', '{password}')";
+            string querystring = $"Insert into Registration(UserLogin, UserPassword, IsAdmin) values('{login}', '{password}', 0)";
             SqlCommand sqlCommand = new SqlCommand(querystring, dataBase.GetConnection());
             dataBase.OpenConnection();
             if (sqlCommand.ExecuteNonQuery() == 1)

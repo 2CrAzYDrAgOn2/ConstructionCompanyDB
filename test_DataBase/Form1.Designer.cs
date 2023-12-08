@@ -120,7 +120,7 @@
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxEmployeeID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridViewEmplpyees = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.buttonSearchEmplpyees = new System.Windows.Forms.Button();
             this.buttonClearEmplpyees = new System.Windows.Forms.Button();
@@ -194,7 +194,7 @@
             this.tabPage3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmplpyees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
             this.panel6.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -242,7 +242,7 @@
             this.tabPage1.Controls.Add(this.panelTitle);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(761, 874);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Проекты";
@@ -279,7 +279,6 @@
             this.buttonSaveProjects.TabIndex = 3;
             this.buttonSaveProjects.Text = "Сохранить";
             this.buttonSaveProjects.UseVisualStyleBackColor = true;
-            this.buttonSaveProjects.Click += new System.EventHandler(this.ButtonSaveDormitories_Click);
             // 
             // buttonExcelProjects
             // 
@@ -298,7 +297,6 @@
             this.buttonChangeProjects.TabIndex = 2;
             this.buttonChangeProjects.Text = "Изменить";
             this.buttonChangeProjects.UseVisualStyleBackColor = true;
-            this.buttonChangeProjects.Click += new System.EventHandler(this.ButtonChangeDormitories_Click);
             // 
             // buttonWordProjects
             // 
@@ -317,7 +315,6 @@
             this.buttonDeleteProjects.TabIndex = 1;
             this.buttonDeleteProjects.Text = "Удалить";
             this.buttonDeleteProjects.UseVisualStyleBackColor = true;
-            this.buttonDeleteProjects.Click += new System.EventHandler(this.ButtonDeleteDormitories_Click);
             // 
             // buttonNewProjects
             // 
@@ -327,7 +324,6 @@
             this.buttonNewProjects.TabIndex = 0;
             this.buttonNewProjects.Text = "Новая запись";
             this.buttonNewProjects.UseVisualStyleBackColor = true;
-            this.buttonNewProjects.Click += new System.EventHandler(this.ButtonNewDormitories_Click);
             // 
             // labelControl
             // 
@@ -482,7 +478,6 @@
             this.dataGridViewProjects.RowHeadersWidth = 62;
             this.dataGridViewProjects.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewProjects.TabIndex = 1;
-            this.dataGridViewProjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewDormitories_CellClick);
             // 
             // panelTitle
             // 
@@ -535,7 +530,6 @@
             this.textBoxSearchProjects.Name = "textBoxSearchProjects";
             this.textBoxSearchProjects.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchProjects.TabIndex = 1;
-            this.textBoxSearchProjects.TextChanged += new System.EventHandler(this.TextBoxSearchDormitories_TextChanged);
             // 
             // labelTitle
             // 
@@ -570,7 +564,7 @@
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(761, 874);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Клиенты";
@@ -819,6 +813,7 @@
             this.buttonClearCustomers.Size = new System.Drawing.Size(67, 67);
             this.buttonClearCustomers.TabIndex = 3;
             this.buttonClearCustomers.UseVisualStyleBackColor = true;
+            this.buttonClearCustomers.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshCustomers
             // 
@@ -829,6 +824,7 @@
             this.buttonRefreshCustomers.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshCustomers.TabIndex = 2;
             this.buttonRefreshCustomers.UseVisualStyleBackColor = true;
+            this.buttonRefreshCustomers.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchCustomers
             // 
@@ -853,11 +849,11 @@
             this.tabPage3.Controls.Add(this.panel4);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.panel5);
-            this.tabPage3.Controls.Add(this.dataGridViewEmplpyees);
+            this.tabPage3.Controls.Add(this.dataGridViewEmployees);
             this.tabPage3.Controls.Add(this.panel6);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(761, 874);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Сотрудники";
@@ -1120,17 +1116,17 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Запись:";
             // 
-            // dataGridViewEmplpyees
+            // dataGridViewEmployees
             // 
-            this.dataGridViewEmplpyees.AllowUserToAddRows = false;
-            this.dataGridViewEmplpyees.AllowUserToDeleteRows = false;
-            this.dataGridViewEmplpyees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmplpyees.Location = new System.Drawing.Point(8, 79);
-            this.dataGridViewEmplpyees.Name = "dataGridViewEmplpyees";
-            this.dataGridViewEmplpyees.ReadOnly = true;
-            this.dataGridViewEmplpyees.RowHeadersWidth = 62;
-            this.dataGridViewEmplpyees.Size = new System.Drawing.Size(743, 305);
-            this.dataGridViewEmplpyees.TabIndex = 1;
+            this.dataGridViewEmployees.AllowUserToAddRows = false;
+            this.dataGridViewEmployees.AllowUserToDeleteRows = false;
+            this.dataGridViewEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmployees.Location = new System.Drawing.Point(8, 79);
+            this.dataGridViewEmployees.Name = "dataGridViewEmployees";
+            this.dataGridViewEmployees.ReadOnly = true;
+            this.dataGridViewEmployees.RowHeadersWidth = 62;
+            this.dataGridViewEmployees.Size = new System.Drawing.Size(743, 305);
+            this.dataGridViewEmployees.TabIndex = 1;
             // 
             // panel6
             // 
@@ -1163,6 +1159,7 @@
             this.buttonClearEmplpyees.Size = new System.Drawing.Size(67, 67);
             this.buttonClearEmplpyees.TabIndex = 3;
             this.buttonClearEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonClearEmplpyees.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshEmplpyees
             // 
@@ -1173,6 +1170,7 @@
             this.buttonRefreshEmplpyees.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshEmplpyees.TabIndex = 2;
             this.buttonRefreshEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonRefreshEmplpyees.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchEmplpyees
             // 
@@ -1201,7 +1199,7 @@
             this.tabPage4.Controls.Add(this.panel9);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(761, 874);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Материалы";
@@ -1431,6 +1429,7 @@
             this.buttonClearMaterials.Size = new System.Drawing.Size(67, 67);
             this.buttonClearMaterials.TabIndex = 3;
             this.buttonClearMaterials.UseVisualStyleBackColor = true;
+            this.buttonClearMaterials.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshMaterials
             // 
@@ -1441,6 +1440,7 @@
             this.buttonRefreshMaterials.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshMaterials.TabIndex = 2;
             this.buttonRefreshMaterials.UseVisualStyleBackColor = true;
+            this.buttonRefreshMaterials.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchMaterials
             // 
@@ -1469,7 +1469,7 @@
             this.tabPage5.Controls.Add(this.panel12);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(761, 874);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Исп. мат.";
@@ -1680,6 +1680,7 @@
             this.buttonCleatProjectMaterials.Size = new System.Drawing.Size(67, 67);
             this.buttonCleatProjectMaterials.TabIndex = 3;
             this.buttonCleatProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonCleatProjectMaterials.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // buttonRefreshProjectMaterials
             // 
@@ -1690,6 +1691,7 @@
             this.buttonRefreshProjectMaterials.Size = new System.Drawing.Size(67, 67);
             this.buttonRefreshProjectMaterials.TabIndex = 2;
             this.buttonRefreshProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonRefreshProjectMaterials.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // textBoxSearchProjectMaterials
             // 
@@ -1744,7 +1746,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmplpyees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1836,7 +1838,7 @@
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxEmployeeID;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridViewEmplpyees;
+        private System.Windows.Forms.DataGridView dataGridViewEmployees;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button buttonSearchEmplpyees;
         private System.Windows.Forms.Button buttonClearEmplpyees;

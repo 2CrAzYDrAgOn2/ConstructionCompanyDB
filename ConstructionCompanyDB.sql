@@ -6,7 +6,7 @@ CREATE TABLE Projects (
     ProjectName NVARCHAR(255) NOT NULL,
     StartDate DATE,
     EndDate DATE,
-    Budget DECIMAL(18, 2),
+    Budget INT,
     Status NVARCHAR(50)
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE Employees (
     LastName NVARCHAR(50) NOT NULL,
     Position NVARCHAR(50),
     HireDate DATE,
-    Salary DECIMAL(18, 2),
+    Salary INT,
     Email NVARCHAR(255),
     PhoneNumber NVARCHAR(20)
 );
@@ -32,7 +32,7 @@ CREATE TABLE Employees (
 CREATE TABLE Materials (
     MaterialID INT PRIMARY KEY IDENTITY(1,1),
     MaterialName NVARCHAR(255) NOT NULL,
-    UnitPrice DECIMAL(18, 2),
+    UnitPrice INT,
     QuantityInStock INT
 );
 
@@ -48,7 +48,8 @@ CREATE TABLE ProjectMaterials (
 CREATE TABLE Registration (
 	UserID INT PRIMARY KEY IDENTITY(1,1),
 	UserLogin VARCHAR(50),
-	UserPassword VARCHAR(50)
+	UserPassword VARCHAR(50),
+	IsAdmin bit
 );
 
 INSERT INTO Projects (ProjectName, StartDate, EndDate, Budget, Status)
@@ -81,9 +82,10 @@ VALUES
     (3, 1, 300),
     (3, 2, 200);
 
-INSERT INTO Registration (UserLogin, UserPassword)
+INSERT INTO Registration (UserLogin, UserPassword, IsAdmin)
 VALUES
-	('admin', 'admin');
+	('admin', 'admin', 1),
+	('user', 'user', 0);
 
 SELECT * FROM Projects;
 SELECT * FROM Customers;
