@@ -82,11 +82,11 @@ namespace test_DataBase
                 dataGridViewMaterials.Columns.Add("MaterialID", "Номер");
                 dataGridViewMaterials.Columns.Add("MaterialName", "Название материала");
                 dataGridViewMaterials.Columns.Add("UnitPrice", "Цена");
-                dataGridViewMaterials.Columns.Add("QuantinityInStock", "В наличии");
+                dataGridViewMaterials.Columns.Add("QuantityInStock", "В наличии");
                 dataGridViewMaterials.Columns.Add("IsNew", String.Empty);
                 dataGridViewProjectMaterials.Columns.Add("ProjectID", "Номер проекта");
                 dataGridViewProjectMaterials.Columns.Add("MaterialID", "Номер материала");
-                dataGridViewProjectMaterials.Columns.Add("QuantinityUsed", "Использовано");
+                dataGridViewProjectMaterials.Columns.Add("QuantityUsed", "Использовано");
                 dataGridViewProjectMaterials.Columns.Add("IsNew", String.Empty);
             }
             catch (Exception ex)
@@ -329,7 +329,7 @@ namespace test_DataBase
                         break;
 
                     case "dataGridViewMaterials":
-                        string searchStringMaterials = $"select * from Materials where concat (MaterialID, MaterialName, UnitPrice, QuantinityInStock) like '%" + textBoxSearchMaterials.Text + "%'";
+                        string searchStringMaterials = $"select * from Materials where concat (MaterialID, MaterialName, UnitPrice, QuantityInStock) like '%" + textBoxSearchMaterials.Text + "%'";
                         SqlCommand sqlCommandMaterials = new SqlCommand(searchStringMaterials, dataBase.GetConnection());
                         dataBase.OpenConnection();
                         SqlDataReader sqlDataReaderMaterials = sqlCommandMaterials.ExecuteReader();
@@ -341,7 +341,7 @@ namespace test_DataBase
                         break;
 
                     case "dataGridViewProjectMaterials":
-                        string searchStringProjectMaterials = $"select * from ProjectMaterials where concat (ProjectID, MaterialID, QuantinityUsed) like '%" + textBoxSearchProjectMaterials.Text + "%'";
+                        string searchStringProjectMaterials = $"select * from ProjectMaterials where concat (ProjectID, MaterialID, QuantityUsed) like '%" + textBoxSearchProjectMaterials.Text + "%'";
                         SqlCommand sqlCommandProjectMaterials = new SqlCommand(searchStringProjectMaterials, dataBase.GetConnection());
                         dataBase.OpenConnection();
                         SqlDataReader sqlDataReaderProjectMaterials = sqlCommandProjectMaterials.ExecuteReader();
@@ -536,8 +536,8 @@ namespace test_DataBase
                                 var materialID = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var materialName = dataGridView.Rows[index].Cells[1].Value.ToString();
                                 var unitPrice = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var quantinityInStock = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update Materials set MaterialName = '{materialName}', UnitPrice = '{unitPrice}', QuantinityInStock = '{quantinityInStock}' where MaterialID = '{materialID}'";
+                                var QuantityInStock = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var changeQuery = $"update Materials set MaterialName = '{materialName}', UnitPrice = '{unitPrice}', QuantityInStock = '{QuantityInStock}' where MaterialID = '{materialID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -561,8 +561,8 @@ namespace test_DataBase
                             {
                                 var projectIDProjectMaterials = dataGridView.Rows[index].Cells[0].Value.ToString();
                                 var materialIDProjectMaterials = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var quantinityUsed = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var changeQuery = $"update ProjectMaterials set QuantinityUsed = '{quantinityUsed}' where ProjectID = '{projectIDProjectMaterials}' and MaterialID = '{materialIDProjectMaterials}'";
+                                var QuantityUsed = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var changeQuery = $"update ProjectMaterials set QuantityUsed = '{QuantityUsed}' where ProjectID = '{projectIDProjectMaterials}' and MaterialID = '{materialIDProjectMaterials}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -629,16 +629,16 @@ namespace test_DataBase
                         var materialID = textBoxMaterialID.Text;
                         var materialName = textBoxMaterialName.Text;
                         var unitPrice = textBoxUnitPrice.Text;
-                        var quantinityInStock = textBoxQuantinityInStock.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(materialID, materialName, unitPrice, quantinityInStock);
+                        var QuantityInStock = textBoxQuantinityInStock.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(materialID, materialName, unitPrice, QuantityInStock);
                         dataGridView.Rows[selectedRowIndex].Cells[4].Value = RowState.Modified;
                         break;
 
                     case "dataGridViewProjectMaterials":
                         var projectIDProjectMaterials = textBoxProjectIDProjectMaterials.Text;
                         var materialIDProjectMaterials = textBoxMaterialIDProjectMaterials.Text;
-                        var quantinityUsed = textBoxQuantinityUsed.Text;
-                        dataGridView.Rows[selectedRowIndex].SetValues(projectIDProjectMaterials, materialIDProjectMaterials, quantinityUsed);
+                        var QuantityUsed = textBoxQuantinityUsed.Text;
+                        dataGridView.Rows[selectedRowIndex].SetValues(projectIDProjectMaterials, materialIDProjectMaterials, QuantityUsed);
                         dataGridView.Rows[selectedRowIndex].Cells[3].Value = RowState.Modified;
                         break;
                 }
