@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace test_DataBase
 {
@@ -24,8 +25,11 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var facultyName = textBoxFacultyName.Text;
-                var addQuery = $"insert into Faculties (FacultyName) values ('{facultyName}')";
+                var customerName = textBoxCustomerName.Text;
+                var contactPerson = textBoxContactPerson.Text;
+                var contactNumber = textBoxContactNumber.Text;
+                var email = textBoxEmail.Text;
+                var addQuery = $"insert into Customers (CustomerName, ContactPerson, ContactNumber, Email) values ('{customerName}', '{contactPerson}', '{contactNumber}', '{email}')";
                 var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);

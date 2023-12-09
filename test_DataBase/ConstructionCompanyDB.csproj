@@ -106,11 +106,11 @@
     <Compile Include="AddFormMaterials.Designer.cs">
       <DependentUpon>AddFormMaterials.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddFormsProjectMaterials.cs">
+    <Compile Include="AddFormProjectMaterials.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddFormsProjectMaterials.Designer.cs">
-      <DependentUpon>AddFormsProjectMaterials.cs</DependentUpon>
+    <Compile Include="AddFormProjectMaterials.Designer.cs">
+      <DependentUpon>AddFormProjectMaterials.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Form1.cs">
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="AddFormMaterials.resx">
       <DependentUpon>AddFormMaterials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddFormsProjectMaterials.resx">
-      <DependentUpon>AddFormsProjectMaterials.cs</DependentUpon>
+    <EmbeddedResource Include="AddFormProjectMaterials.resx">
+      <DependentUpon>AddFormProjectMaterials.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

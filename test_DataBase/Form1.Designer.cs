@@ -270,6 +270,7 @@
             this.buttonPDFProjects.TabIndex = 4;
             this.buttonPDFProjects.Text = "Вывод в PDF";
             this.buttonPDFProjects.UseVisualStyleBackColor = true;
+            this.buttonPDFProjects.Click += new System.EventHandler(this.ButtonPDFProjects_Click);
             // 
             // buttonSaveProjects
             // 
@@ -279,6 +280,7 @@
             this.buttonSaveProjects.TabIndex = 3;
             this.buttonSaveProjects.Text = "Сохранить";
             this.buttonSaveProjects.UseVisualStyleBackColor = true;
+            this.buttonSaveProjects.Click += new System.EventHandler(this.ButtonSaveProjects_Click);
             // 
             // buttonExcelProjects
             // 
@@ -288,6 +290,7 @@
             this.buttonExcelProjects.TabIndex = 5;
             this.buttonExcelProjects.Text = "Вывод в Excel";
             this.buttonExcelProjects.UseVisualStyleBackColor = true;
+            this.buttonExcelProjects.Click += new System.EventHandler(this.ButtonExcelProjects_Click);
             // 
             // buttonChangeProjects
             // 
@@ -297,6 +300,7 @@
             this.buttonChangeProjects.TabIndex = 2;
             this.buttonChangeProjects.Text = "Изменить";
             this.buttonChangeProjects.UseVisualStyleBackColor = true;
+            this.buttonChangeProjects.Click += new System.EventHandler(this.ButtonChangeProjects_Click);
             // 
             // buttonWordProjects
             // 
@@ -306,6 +310,7 @@
             this.buttonWordProjects.TabIndex = 6;
             this.buttonWordProjects.Text = "Вывод в Word";
             this.buttonWordProjects.UseVisualStyleBackColor = true;
+            this.buttonWordProjects.Click += new System.EventHandler(this.ButtonWordProjects_Click);
             // 
             // buttonDeleteProjects
             // 
@@ -315,6 +320,7 @@
             this.buttonDeleteProjects.TabIndex = 1;
             this.buttonDeleteProjects.Text = "Удалить";
             this.buttonDeleteProjects.UseVisualStyleBackColor = true;
+            this.buttonDeleteProjects.Click += new System.EventHandler(this.ButtonDeleteProjects_Click);
             // 
             // buttonNewProjects
             // 
@@ -324,6 +330,7 @@
             this.buttonNewProjects.TabIndex = 0;
             this.buttonNewProjects.Text = "Новая запись";
             this.buttonNewProjects.UseVisualStyleBackColor = true;
+            this.buttonNewProjects.Click += new System.EventHandler(this.ButtonNewProjects_Click);
             // 
             // labelControl
             // 
@@ -478,6 +485,7 @@
             this.dataGridViewProjects.RowHeadersWidth = 62;
             this.dataGridViewProjects.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewProjects.TabIndex = 1;
+            this.dataGridViewProjects.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewProjects_CellClick);
             // 
             // panelTitle
             // 
@@ -530,6 +538,7 @@
             this.textBoxSearchProjects.Name = "textBoxSearchProjects";
             this.textBoxSearchProjects.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchProjects.TabIndex = 1;
+            this.textBoxSearchProjects.TextChanged += new System.EventHandler(this.TextBoxSearchProjects_TextChanged);
             // 
             // labelTitle
             // 
@@ -592,6 +601,7 @@
             this.buttonPDFCustomers.TabIndex = 4;
             this.buttonPDFCustomers.Text = "Вывод в PDF";
             this.buttonPDFCustomers.UseVisualStyleBackColor = true;
+            this.buttonPDFCustomers.Click += new System.EventHandler(this.ButtonPDFCustomers_Click);
             // 
             // buttonSaveCustomers
             // 
@@ -601,6 +611,7 @@
             this.buttonSaveCustomers.TabIndex = 3;
             this.buttonSaveCustomers.Text = "Сохранить";
             this.buttonSaveCustomers.UseVisualStyleBackColor = true;
+            this.buttonSaveCustomers.Click += new System.EventHandler(this.ButtonSaveCustomers_Click);
             // 
             // buttonExcelCustomers
             // 
@@ -610,6 +621,7 @@
             this.buttonExcelCustomers.TabIndex = 5;
             this.buttonExcelCustomers.Text = "Вывод в Excel";
             this.buttonExcelCustomers.UseVisualStyleBackColor = true;
+            this.buttonExcelCustomers.Click += new System.EventHandler(this.ButtonExcelCustomers_Click);
             // 
             // buttonChangeCustomers
             // 
@@ -619,6 +631,7 @@
             this.buttonChangeCustomers.TabIndex = 2;
             this.buttonChangeCustomers.Text = "Изменить";
             this.buttonChangeCustomers.UseVisualStyleBackColor = true;
+            this.buttonChangeCustomers.Click += new System.EventHandler(this.ButtonChangeCustomers_Click);
             // 
             // buttonWordCustomers
             // 
@@ -628,6 +641,7 @@
             this.buttonWordCustomers.TabIndex = 6;
             this.buttonWordCustomers.Text = "Вывод в Word";
             this.buttonWordCustomers.UseVisualStyleBackColor = true;
+            this.buttonWordCustomers.Click += new System.EventHandler(this.ButtonWordCustomers_Click);
             // 
             // buttonDeleteCustomers
             // 
@@ -637,6 +651,7 @@
             this.buttonDeleteCustomers.TabIndex = 1;
             this.buttonDeleteCustomers.Text = "Удалить";
             this.buttonDeleteCustomers.UseVisualStyleBackColor = true;
+            this.buttonDeleteCustomers.Click += new System.EventHandler(this.ButtonDeleteCustomers_Click);
             // 
             // buttonNewCustomers
             // 
@@ -646,6 +661,7 @@
             this.buttonNewCustomers.TabIndex = 0;
             this.buttonNewCustomers.Text = "Новая запись";
             this.buttonNewCustomers.UseVisualStyleBackColor = true;
+            this.buttonNewCustomers.Click += new System.EventHandler(this.ButtonNewCustomers_Click);
             // 
             // label1
             // 
@@ -781,6 +797,7 @@
             this.dataGridViewCustomers.RowHeadersWidth = 62;
             this.dataGridViewCustomers.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewCustomers.TabIndex = 1;
+            this.dataGridViewCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCustomers_CellClick);
             // 
             // panel3
             // 
@@ -833,6 +850,7 @@
             this.textBoxSearchCustomers.Name = "textBoxSearchCustomers";
             this.textBoxSearchCustomers.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchCustomers.TabIndex = 1;
+            this.textBoxSearchCustomers.TextChanged += new System.EventHandler(this.TextBoxSearchCustomers_TextChanged);
             // 
             // label5
             // 
@@ -881,6 +899,7 @@
             this.buttonPDFEmplpyees.TabIndex = 4;
             this.buttonPDFEmplpyees.Text = "Вывод в PDF";
             this.buttonPDFEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonPDFEmplpyees.Click += new System.EventHandler(this.ButtonPDFEmplpyees_Click);
             // 
             // buttonSaveEmplpyees
             // 
@@ -890,6 +909,7 @@
             this.buttonSaveEmplpyees.TabIndex = 3;
             this.buttonSaveEmplpyees.Text = "Сохранить";
             this.buttonSaveEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonSaveEmplpyees.Click += new System.EventHandler(this.ButtonSaveEmplpyees_Click);
             // 
             // buttonExcelEmplpyees
             // 
@@ -899,6 +919,7 @@
             this.buttonExcelEmplpyees.TabIndex = 5;
             this.buttonExcelEmplpyees.Text = "Вывод в Excel";
             this.buttonExcelEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonExcelEmplpyees.Click += new System.EventHandler(this.ButtonExcelEmplpyees_Click);
             // 
             // buttonChangeEmplpyees
             // 
@@ -908,6 +929,7 @@
             this.buttonChangeEmplpyees.TabIndex = 2;
             this.buttonChangeEmplpyees.Text = "Изменить";
             this.buttonChangeEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonChangeEmplpyees.Click += new System.EventHandler(this.ButtonChangeEmplpyees_Click);
             // 
             // buttonWordEmplpyees
             // 
@@ -917,6 +939,7 @@
             this.buttonWordEmplpyees.TabIndex = 6;
             this.buttonWordEmplpyees.Text = "Вывод в Word";
             this.buttonWordEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonWordEmplpyees.Click += new System.EventHandler(this.ButtonWordEmplpyees_Click);
             // 
             // buttonDeleteEmplpyees
             // 
@@ -926,6 +949,7 @@
             this.buttonDeleteEmplpyees.TabIndex = 1;
             this.buttonDeleteEmplpyees.Text = "Удалить";
             this.buttonDeleteEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonDeleteEmplpyees.Click += new System.EventHandler(this.ButtonDeleteEmplpyees_Click);
             // 
             // buttonNewEmplpyees
             // 
@@ -935,6 +959,7 @@
             this.buttonNewEmplpyees.TabIndex = 0;
             this.buttonNewEmplpyees.Text = "Новая запись";
             this.buttonNewEmplpyees.UseVisualStyleBackColor = true;
+            this.buttonNewEmplpyees.Click += new System.EventHandler(this.ButtonNewEmplpyees_Click);
             // 
             // label6
             // 
@@ -1127,6 +1152,7 @@
             this.dataGridViewEmployees.RowHeadersWidth = 62;
             this.dataGridViewEmployees.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewEmployees.TabIndex = 1;
+            this.dataGridViewEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewEmployees_CellClick);
             // 
             // panel6
             // 
@@ -1179,6 +1205,7 @@
             this.textBoxSearchEmployees.Name = "textBoxSearchEmployees";
             this.textBoxSearchEmployees.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchEmployees.TabIndex = 1;
+            this.textBoxSearchEmployees.TextChanged += new System.EventHandler(this.TextBoxSearchEmployees_TextChanged);
             // 
             // label10
             // 
@@ -1227,6 +1254,7 @@
             this.buttonPDFMaterials.TabIndex = 4;
             this.buttonPDFMaterials.Text = "Вывод в PDF";
             this.buttonPDFMaterials.UseVisualStyleBackColor = true;
+            this.buttonPDFMaterials.Click += new System.EventHandler(this.ButtonPDFMaterials_Click);
             // 
             // buttonSaveMaterials
             // 
@@ -1236,6 +1264,7 @@
             this.buttonSaveMaterials.TabIndex = 3;
             this.buttonSaveMaterials.Text = "Сохранить";
             this.buttonSaveMaterials.UseVisualStyleBackColor = true;
+            this.buttonSaveMaterials.Click += new System.EventHandler(this.ButtonSaveMaterials_Click);
             // 
             // buttonExcelMaterials
             // 
@@ -1245,6 +1274,7 @@
             this.buttonExcelMaterials.TabIndex = 5;
             this.buttonExcelMaterials.Text = "Вывод в Excel";
             this.buttonExcelMaterials.UseVisualStyleBackColor = true;
+            this.buttonExcelMaterials.Click += new System.EventHandler(this.ButtonExcelMaterials_Click);
             // 
             // buttonChangeMaterials
             // 
@@ -1254,6 +1284,7 @@
             this.buttonChangeMaterials.TabIndex = 2;
             this.buttonChangeMaterials.Text = "Изменить";
             this.buttonChangeMaterials.UseVisualStyleBackColor = true;
+            this.buttonChangeMaterials.Click += new System.EventHandler(this.ButtonChangeMaterials_Click);
             // 
             // buttonWordMaterials
             // 
@@ -1263,6 +1294,7 @@
             this.buttonWordMaterials.TabIndex = 6;
             this.buttonWordMaterials.Text = "Вывод в Word";
             this.buttonWordMaterials.UseVisualStyleBackColor = true;
+            this.buttonWordMaterials.Click += new System.EventHandler(this.ButtonWordMaterials_Click);
             // 
             // buttonDeleteMaterials
             // 
@@ -1272,6 +1304,7 @@
             this.buttonDeleteMaterials.TabIndex = 1;
             this.buttonDeleteMaterials.Text = "Удалить";
             this.buttonDeleteMaterials.UseVisualStyleBackColor = true;
+            this.buttonDeleteMaterials.Click += new System.EventHandler(this.ButtonDeleteMaterials_Click);
             // 
             // buttonNewMaterials
             // 
@@ -1281,6 +1314,7 @@
             this.buttonNewMaterials.TabIndex = 0;
             this.buttonNewMaterials.Text = "Новая запись";
             this.buttonNewMaterials.UseVisualStyleBackColor = true;
+            this.buttonNewMaterials.Click += new System.EventHandler(this.ButtonNewMaterials_Click);
             // 
             // label11
             // 
@@ -1397,6 +1431,7 @@
             this.dataGridViewMaterials.RowHeadersWidth = 62;
             this.dataGridViewMaterials.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewMaterials.TabIndex = 1;
+            this.dataGridViewMaterials.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewMaterials_CellClick);
             // 
             // panel9
             // 
@@ -1449,6 +1484,7 @@
             this.textBoxSearchMaterials.Name = "textBoxSearchMaterials";
             this.textBoxSearchMaterials.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchMaterials.TabIndex = 1;
+            this.textBoxSearchMaterials.TextChanged += new System.EventHandler(this.TextBoxSearchMaterials_TextChanged);
             // 
             // label15
             // 
@@ -1497,6 +1533,7 @@
             this.buttonPDFProjectMaterials.TabIndex = 4;
             this.buttonPDFProjectMaterials.Text = "Вывод в PDF";
             this.buttonPDFProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonPDFProjectMaterials.Click += new System.EventHandler(this.ButtonPDFProjectMaterials_Click);
             // 
             // buttonSaveProjectMaterials
             // 
@@ -1506,6 +1543,7 @@
             this.buttonSaveProjectMaterials.TabIndex = 3;
             this.buttonSaveProjectMaterials.Text = "Сохранить";
             this.buttonSaveProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonSaveProjectMaterials.Click += new System.EventHandler(this.ButtonSaveProjectMaterials_Click);
             // 
             // buttonExcelProjectMaterials
             // 
@@ -1515,6 +1553,7 @@
             this.buttonExcelProjectMaterials.TabIndex = 5;
             this.buttonExcelProjectMaterials.Text = "Вывод в Excel";
             this.buttonExcelProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonExcelProjectMaterials.Click += new System.EventHandler(this.ButtonExcelProjectMaterials_Click);
             // 
             // buttonChangeProjectMaterials
             // 
@@ -1524,6 +1563,7 @@
             this.buttonChangeProjectMaterials.TabIndex = 2;
             this.buttonChangeProjectMaterials.Text = "Изменить";
             this.buttonChangeProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonChangeProjectMaterials.Click += new System.EventHandler(this.ButtonChangeProjectMaterials_Click);
             // 
             // buttonWordProjectMaterials
             // 
@@ -1533,6 +1573,7 @@
             this.buttonWordProjectMaterials.TabIndex = 6;
             this.buttonWordProjectMaterials.Text = "Вывод в Word";
             this.buttonWordProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonWordProjectMaterials.Click += new System.EventHandler(this.ButtonWordProjectMaterials_Click);
             // 
             // buttonDeleteProjectMaterials
             // 
@@ -1542,6 +1583,7 @@
             this.buttonDeleteProjectMaterials.TabIndex = 1;
             this.buttonDeleteProjectMaterials.Text = "Удалить";
             this.buttonDeleteProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonDeleteProjectMaterials.Click += new System.EventHandler(this.ButtonDeleteProjectMaterials_Click);
             // 
             // buttonNewProjectMaterials
             // 
@@ -1551,6 +1593,7 @@
             this.buttonNewProjectMaterials.TabIndex = 0;
             this.buttonNewProjectMaterials.Text = "Новая запись";
             this.buttonNewProjectMaterials.UseVisualStyleBackColor = true;
+            this.buttonNewProjectMaterials.Click += new System.EventHandler(this.ButtonNewProjectMaterials_Click);
             // 
             // label29
             // 
@@ -1648,6 +1691,7 @@
             this.dataGridViewProjectMaterials.RowHeadersWidth = 62;
             this.dataGridViewProjectMaterials.Size = new System.Drawing.Size(743, 305);
             this.dataGridViewProjectMaterials.TabIndex = 1;
+            this.dataGridViewProjectMaterials.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewProjectMaterials_CellClick);
             // 
             // panel12
             // 
@@ -1700,6 +1744,7 @@
             this.textBoxSearchProjectMaterials.Name = "textBoxSearchProjectMaterials";
             this.textBoxSearchProjectMaterials.Size = new System.Drawing.Size(149, 33);
             this.textBoxSearchProjectMaterials.TabIndex = 1;
+            this.textBoxSearchProjectMaterials.TextChanged += new System.EventHandler(this.TextBoxSearchProjectMaterials_TextChanged);
             // 
             // label35
             // 

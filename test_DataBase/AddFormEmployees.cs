@@ -24,11 +24,23 @@ namespace test_DataBase
             try
             {
                 dataBase.OpenConnection();
-                var groupName = textBoxGroupName.Text;
-                var addQuery = $"insert into Groups (GroupName) values ('{groupName}')";
-                var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
-                sqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var firstName = textBoxFirstName.Text;
+                var lastName = textBoxLastName.Text;
+                var position = textBoxPosition.Text;
+                var hireDate = textBoxHireDate.Text;
+                var employees = textBoxEmailEmployees.Text;
+                var phoneNumber = textBoxPhoneNumber.Text;
+                if (int.TryParse(textBoxSalary.Text, out int salary))
+                {
+                    var addQuery = $"insert into Employees (FirstName, LastName, Position, HireDate, Salary, Email, PhoneNumber) values ('{firstName}', '{lastName}', '{position}', '{hireDate}', '{salary}', '{employees}', '{phoneNumber}')";
+                    var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
+                    sqlCommand.ExecuteNonQuery();
+                    MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Цена должна иметь числовой формат!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {

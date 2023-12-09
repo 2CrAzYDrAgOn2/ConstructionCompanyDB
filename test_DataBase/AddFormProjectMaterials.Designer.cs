@@ -1,6 +1,6 @@
 ﻿namespace test_DataBase
 {
-    partial class AddFormsProjectMaterials
+    partial class AddFormProjectMaterials
     {
         /// <summary>
         /// Required designer variable.
@@ -67,6 +67,7 @@
             this.buttonSave.TabIndex = 30;
             this.buttonSave.Text = "Сохранить";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.ButtonSave_Click);
             // 
             // label31
             // 

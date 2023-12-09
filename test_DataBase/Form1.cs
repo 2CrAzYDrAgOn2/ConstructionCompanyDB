@@ -445,7 +445,7 @@ namespace test_DataBase
                             if (rowStateProjects == RowState.Deleted)
                             {
                                 var projectID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Projects where ClientID = {projectID}";
+                                var deleteQuery = $"delete from Projects where ProjectID = {projectID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -457,7 +457,7 @@ namespace test_DataBase
                                 var endDate = dataGridView.Rows[index].Cells[3].Value.ToString();
                                 var budget = dataGridView.Rows[index].Cells[4].Value.ToString();
                                 var status = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var changeQuery = $"update Projects set ProjectName = '{firstName}', StartDate = '{lastName}', EndDate = '{email}', Budget = '{phone}' where ProjectID = '{projectID}'";
+                                var changeQuery = $"update Projects set ProjectName = '{projectName}', StartDate = '{startDate}', EndDate = '{endDate}', Budget = '{budget}', Status = '{status}' where ProjectID = '{projectID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -471,19 +471,19 @@ namespace test_DataBase
                             }
                             if (rowStateCustomers == RowState.Deleted)
                             {
-                                var tourID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Customers where TourID = {tourID}";
+                                var customerID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Customers where CustomerID = {customerID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             if (rowStateCustomers == RowState.Modified)
                             {
-                                var tourID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var tourName = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var destination = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var startDate = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var endDate = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var changeQuery = $"update Customers set TourName = '{tourName}', Destination = '{destination}', StartDate = '{startDate}', EndDate = '{endDate}', Price = '{price}' where TourID = '{tourID}'";
+                                var customerID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var customerName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var contactPerson = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var contactNumber = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var email = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var changeQuery = $"update Customers set CustomerName = '{customerName}', ContactPerson = '{contactPerson}', ContactNumber = '{contactNumber}', Email = '{email}' where CustomerID = '{customerID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -497,22 +497,22 @@ namespace test_DataBase
                             }
                             if (rowStateEmployees == RowState.Deleted)
                             {
-                                var bookingID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Employees where BookingID = {bookingID}";
+                                var employeeID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Employees where EmployeeID = {employeeID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             if (rowStateEmployees == RowState.Modified)
                             {
-                                var bookingID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var clientID = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var tourID = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var bookingDate = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var numberOfPersons = dataGridView.Rows[index].Cells[4].Value.ToString();
-                                var totalAmount = dataGridView.Rows[index].Cells[5].Value.ToString();
-                                var totalAmount = dataGridView.Rows[index].Cells[6].Value.ToString();
-                                var totalAmount = dataGridView.Rows[index].Cells[7].Value.ToString();
-                                var changeQuery = $"update Employees set ClientID = '{clientID}', TourID = '{tourID}', BookingDate = '{bookingDate}', NumberOfPersons = '{numberOfPersons}', TotalAmount = '{totalAmount}' where BookingID = '{bookingID}'";
+                                var employeeID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var firstName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var lastName = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var position = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var hireDate = dataGridView.Rows[index].Cells[4].Value.ToString();
+                                var salary = dataGridView.Rows[index].Cells[5].Value.ToString();
+                                var emailEmployees = dataGridView.Rows[index].Cells[6].Value.ToString();
+                                var phoneNumber = dataGridView.Rows[index].Cells[7].Value.ToString();
+                                var changeQuery = $"update Employees set FirstName = '{firstName}', LastName = '{lastName}', Position = '{position}', HireDate = '{hireDate}', Salary = '{salary}', Email = '{emailEmployees}', PhoneNumber = '{phoneNumber}' where EmployeeID = '{employeeID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -526,18 +526,18 @@ namespace test_DataBase
                             }
                             if (rowStateMaterials == RowState.Deleted)
                             {
-                                var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Materials where PaymentID = {paymentID}";
+                                var materialID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var deleteQuery = $"delete from Materials where CustomerID = {materialID}";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             if (rowStateMaterials == RowState.Modified)
                             {
-                                var paymentID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var bookingID = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var paymentDate = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var amount = dataGridView.Rows[index].Cells[3].Value.ToString();
-                                var changeQuery = $"update Materials set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
+                                var materialID = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var materialName = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var unitPrice = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var quantinityInStock = dataGridView.Rows[index].Cells[3].Value.ToString();
+                                var changeQuery = $"update Materials set MaterialName = '{materialName}', UnitPrice = '{unitPrice}', QuantinityInStock = '{quantinityInStock}' where MaterialID = '{materialID}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -551,17 +551,18 @@ namespace test_DataBase
                             }
                             if (rowStateProjectMaterials == RowState.Deleted)
                             {
-                                var paymentID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from ProjectMaterials where PaymentID = {paymentID}";
+                                var projectIDProjectMaterials = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
+                                var materialIDProjectMaterials = Convert.ToInt32(dataGridView.Rows[index].Cells[1].Value);
+                                var deleteQuery = $"delete from ProjectMaterials where ProjectID = {projectIDProjectMaterials}, MaterialID = '{materialIDProjectMaterials}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
                             if (rowStateProjectMaterials == RowState.Modified)
                             {
-                                var paymentID = dataGridView.Rows[index].Cells[0].Value.ToString();
-                                var bookingID = dataGridView.Rows[index].Cells[1].Value.ToString();
-                                var paymentDate = dataGridView.Rows[index].Cells[2].Value.ToString();
-                                var changeQuery = $"update ProjectMaterials set BookingID = '{bookingID}', PaymentDate = '{paymentDate}', Amount = '{amount}' where PaymentID = '{paymentID}'";
+                                var projectIDProjectMaterials = dataGridView.Rows[index].Cells[0].Value.ToString();
+                                var materialIDProjectMaterials = dataGridView.Rows[index].Cells[1].Value.ToString();
+                                var quantinityUsed = dataGridView.Rows[index].Cells[2].Value.ToString();
+                                var changeQuery = $"update ProjectMaterials set QuantinityUsed = '{quantinityUsed}' where ProjectID = '{projectIDProjectMaterials}' and MaterialID = '{materialIDProjectMaterials}'";
                                 var sqlCommand = new SqlCommand(changeQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -863,6 +864,609 @@ namespace test_DataBase
             try
             {
                 ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    AddFormProjects addForm = new AddFormProjects();
+                    addForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormCustomers addForm = new AddFormCustomers();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    AddFormEmployees addForm = new AddFormEmployees();
+                    addForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormMaterials addForm = new AddFormMaterials();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonNewProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddFormProjectMaterials addForm = new AddFormProjectMaterials();
+                addForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewProjects);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewCustomers);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewEmployees);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewMaterials);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonDeleteProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DeleteRow(dataGridViewProjectMaterials);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewProjects);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewCustomers);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewEmployees);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewMaterials);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonChangeProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Change(dataGridViewProjectMaterials);
+                ClearFields();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    UpdateBase(dataGridViewProjects);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewCustomers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (admin)
+                {
+                    UpdateBase(dataGridViewEmployees);
+                }
+                else
+                {
+                    MessageBox.Show("У вас недостаточно прав");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonSaveProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UpdateBase(dataGridViewProjectMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewProjects);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewCustomers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewEmployees);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonWordProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToWord(dataGridViewProjectMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewProjects);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewCustomers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewEmployees);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonExcelProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToExcel(dataGridViewProjectMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFProjects_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewProjects);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFCustomers_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewCustomers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFEmplpyees_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewEmployees);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ButtonPDFProjectMaterials_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ExportToPDF(dataGridViewProjectMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewProjects_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewProjects, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewCustomers, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewEmployees_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewEmployees, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewMaterials_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewMaterials, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void DataGridViewProjectMaterials_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                selectedRow = e.RowIndex;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridView_CellClick(dataGridViewProjectMaterials, selectedRow);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchProjects_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewProjects);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchCustomers_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewCustomers);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchEmployees_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewEmployees);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchMaterials_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewMaterials);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBoxSearchProjectMaterials_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(dataGridViewProjectMaterials);
             }
             catch (Exception ex)
             {

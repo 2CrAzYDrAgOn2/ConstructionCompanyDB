@@ -4,33 +4,24 @@ using System.Windows.Forms;
 
 namespace test_DataBase
 {
-    public partial class AddFormProjects : Form
+    public partial class AddFormProjectMaterials : Form
     {
         private readonly DataBase dataBase = new DataBase();
 
-        public AddFormProjects()
+        public AddFormProjectMaterials()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        /// <summary>
-        /// ButtonSave_Click вызывается при нажатии на кнопку "Сохранить"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             try
             {
                 dataBase.OpenConnection();
-                var projectName = textBoxProjectName.Text;
-                var startDate = textBoxStartDate.Text;
-                var endDate = textBoxEndDate.Text;
-                var status = textBoxStatus.Text;
-                if (int.TryParse(textBoxBudget.Text, out int budget))
+                if (int.TryParse(textBoxProjectIDProjectMaterials.Text, out int projectIDProjectMaterials) && int.TryParse(textBoxMaterialIDProjectMaterials.Text, out int materialIDProjectMaterials) && int.TryParse(textBoxQuantinityUsed.Text, out int quantinityUsed))
                 {
-                    var addQuery = $"insert into Projects (ProjectName, StartDate, EndDate, Budget, Status) values ('{projectName}', '{startDate}', '{endDate}', '{budget}', '{status}')";
+                    var addQuery = $"insert into ProjectMaterials (ProjectID, MaterialID, QuantityUsed) values ('{projectIDProjectMaterials}', '{materialIDProjectMaterials}', '{quantinityUsed}')";
                     var sqlCommand = new SqlCommand(addQuery, dataBase.GetConnection());
                     sqlCommand.ExecuteNonQuery();
                     MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
