@@ -594,8 +594,8 @@ namespace test_DataBase
                     case "dataGridViewProjects":
                         var projectID = textBoxProjectID.Text;
                         var projectName = textBoxProjectName.Text;
-                        var startDate = textBoxStartDate.Text;
-                        var endDate = textBoxEndDate.Text;
+                        var startDate = textBoxStartDate.Value;
+                        var endDate = textBoxEndDate.Value;
                         var budget = textBoxBudget.Text;
                         var status = textBoxStatus.Text;
                         dataGridView.Rows[selectedRowIndex].SetValues(projectID, projectName, startDate, endDate, budget, status);
@@ -617,7 +617,7 @@ namespace test_DataBase
                         var firstName = textBoxFirstName.Text;
                         var lastName = textBoxLastName.Text;
                         var position = textBoxPosition.Text;
-                        var hireDate = textBoxHireDate.Text;
+                        var hireDate = textBoxHireDate.Value;
                         var salary = textBoxSalary.Text;
                         var employees = textBoxEmailEmployees.Text;
                         var phoneNumber = textBoxPhoneNumber.Text;

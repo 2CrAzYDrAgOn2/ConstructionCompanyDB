@@ -27,7 +27,7 @@ namespace test_DataBase
                 var firstName = textBoxFirstName.Text;
                 var lastName = textBoxLastName.Text;
                 var position = textBoxPosition.Text;
-                var hireDate = textBoxHireDate.Text;
+                var hireDate = textBoxHireDate.Value;
                 var employees = textBoxEmailEmployees.Text;
                 var phoneNumber = textBoxPhoneNumber.Text;
                 if (int.TryParse(textBoxSalary.Text, out int salary))

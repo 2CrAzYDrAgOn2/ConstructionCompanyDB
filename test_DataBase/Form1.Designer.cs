@@ -48,8 +48,6 @@
             this.textBoxBudget = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
             this.labelProdukciya = new System.Windows.Forms.Label();
             this.labelNumber = new System.Windows.Forms.Label();
             this.textBoxProjectName = new System.Windows.Forms.TextBox();
@@ -75,10 +73,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxContactNumber = new System.Windows.Forms.TextBox();
             this.textBoxContactPerson = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -105,12 +101,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxEmailEmployees = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.textBoxSalary = new System.Windows.Forms.TextBox();
-            this.textBoxHireDate = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.textBoxPosition = new System.Windows.Forms.TextBox();
@@ -179,6 +172,13 @@
             this.buttonRefreshProjectMaterials = new System.Windows.Forms.Button();
             this.textBoxSearchProjectMaterials = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
+            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxContactNumber = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxHireDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmailEmployees = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmail = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
@@ -344,14 +344,14 @@
             // 
             // panelRecord
             // 
+            this.panelRecord.Controls.Add(this.textBoxEndDate);
+            this.panelRecord.Controls.Add(this.textBoxStartDate);
             this.panelRecord.Controls.Add(this.label36);
             this.panelRecord.Controls.Add(this.textBoxStatus);
             this.panelRecord.Controls.Add(this.label19);
             this.panelRecord.Controls.Add(this.textBoxBudget);
             this.panelRecord.Controls.Add(this.label16);
             this.panelRecord.Controls.Add(this.label17);
-            this.panelRecord.Controls.Add(this.textBoxEndDate);
-            this.panelRecord.Controls.Add(this.textBoxStartDate);
             this.panelRecord.Controls.Add(this.labelProdukciya);
             this.panelRecord.Controls.Add(this.labelNumber);
             this.panelRecord.Controls.Add(this.textBoxProjectName);
@@ -413,22 +413,6 @@
             this.label17.Size = new System.Drawing.Size(74, 13);
             this.label17.TabIndex = 10;
             this.label17.Text = "Дата начала:";
-            // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEndDate.TabIndex = 9;
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(130, 137);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxStartDate.TabIndex = 8;
             // 
             // labelProdukciya
             // 
@@ -675,11 +659,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.textBoxEmail);
+            this.panel2.Controls.Add(this.textBoxContactNumber);
+            this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.textBoxContactNumber);
             this.panel2.Controls.Add(this.textBoxContactPerson);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
@@ -700,14 +684,6 @@
             this.label22.TabIndex = 14;
             this.label22.Text = "Email:";
             // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmail.TabIndex = 12;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -725,14 +701,6 @@
             this.label20.Size = new System.Drawing.Size(96, 13);
             this.label20.TabIndex = 10;
             this.label20.Text = "Контактное лицо:";
-            // 
-            // textBoxContactNumber
-            // 
-            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxContactNumber.Location = new System.Drawing.Point(130, 176);
-            this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
-            this.textBoxContactNumber.TabIndex = 9;
             // 
             // textBoxContactPerson
             // 
@@ -973,14 +941,14 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.textBoxEmailEmployees);
+            this.panel5.Controls.Add(this.textBoxPhoneNumber);
+            this.panel5.Controls.Add(this.textBoxHireDate);
             this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.label37);
-            this.panel5.Controls.Add(this.textBoxPhoneNumber);
-            this.panel5.Controls.Add(this.textBoxEmailEmployees);
             this.panel5.Controls.Add(this.label25);
             this.panel5.Controls.Add(this.label26);
             this.panel5.Controls.Add(this.textBoxSalary);
-            this.panel5.Controls.Add(this.textBoxHireDate);
             this.panel5.Controls.Add(this.label23);
             this.panel5.Controls.Add(this.label24);
             this.panel5.Controls.Add(this.textBoxPosition);
@@ -1013,22 +981,6 @@
             this.label37.TabIndex = 18;
             this.label37.Text = "Email:";
             // 
-            // textBoxPhoneNumber
-            // 
-            this.textBoxPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(130, 332);
-            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumber.TabIndex = 17;
-            // 
-            // textBoxEmailEmployees
-            // 
-            this.textBoxEmailEmployees.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmailEmployees.Location = new System.Drawing.Point(130, 293);
-            this.textBoxEmailEmployees.Name = "textBoxEmailEmployees";
-            this.textBoxEmailEmployees.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailEmployees.TabIndex = 16;
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1054,14 +1006,6 @@
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(391, 33);
             this.textBoxSalary.TabIndex = 13;
-            // 
-            // textBoxHireDate
-            // 
-            this.textBoxHireDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxHireDate.Location = new System.Drawing.Point(130, 215);
-            this.textBoxHireDate.Name = "textBoxHireDate";
-            this.textBoxHireDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxHireDate.TabIndex = 12;
             // 
             // label23
             // 
@@ -1756,6 +1700,71 @@
             this.label35.TabIndex = 0;
             this.label35.Text = "Исп. мат.";
             // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxStartDate.Location = new System.Drawing.Point(130, 137);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxStartDate.TabIndex = 17;
+            // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEndDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEndDate.TabIndex = 18;
+            // 
+            // textBoxContactNumber
+            // 
+            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxContactNumber.Location = new System.Drawing.Point(130, 176);
+            this.textBoxContactNumber.Mask = "+7 999 999-99-99";
+            this.textBoxContactNumber.Name = "textBoxContactNumber";
+            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
+            this.textBoxContactNumber.TabIndex = 15;
+            // 
+            // textBoxHireDate
+            // 
+            this.textBoxHireDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxHireDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxHireDate.Location = new System.Drawing.Point(130, 215);
+            this.textBoxHireDate.Name = "textBoxHireDate";
+            this.textBoxHireDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxHireDate.TabIndex = 20;
+            // 
+            // textBoxPhoneNumber
+            // 
+            this.textBoxPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(130, 332);
+            this.textBoxPhoneNumber.Mask = "+7 999 999-99-99";
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumber.TabIndex = 21;
+            // 
+            // textBoxEmailEmployees
+            // 
+            this.textBoxEmailEmployees.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEmailEmployees.Location = new System.Drawing.Point(130, 293);
+            this.textBoxEmailEmployees.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailEmployees.Name = "textBoxEmailEmployees";
+            this.textBoxEmailEmployees.PromptChar = ' ';
+            this.textBoxEmailEmployees.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailEmployees.TabIndex = 22;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEmail.Location = new System.Drawing.Point(130, 215);
+            this.textBoxEmail.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PromptChar = ' ';
+            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmail.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1917,18 +1926,13 @@
         private System.Windows.Forms.TextBox textBoxBudget;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxEndDate;
-        private System.Windows.Forms.TextBox textBoxStartDate;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxContactNumber;
         private System.Windows.Forms.TextBox textBoxContactPerson;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBoxSalary;
-        private System.Windows.Forms.TextBox textBoxHireDate;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox textBoxPosition;
@@ -1966,7 +1970,12 @@
         private System.Windows.Forms.TextBox textBoxStatus;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBoxPhoneNumber;
-        private System.Windows.Forms.TextBox textBoxEmailEmployees;
+        private System.Windows.Forms.DateTimePicker textBoxStartDate;
+        private System.Windows.Forms.DateTimePicker textBoxEndDate;
+        private System.Windows.Forms.MaskedTextBox textBoxContactNumber;
+        private System.Windows.Forms.DateTimePicker textBoxHireDate;
+        private System.Windows.Forms.MaskedTextBox textBoxPhoneNumber;
+        private System.Windows.Forms.MaskedTextBox textBoxEmailEmployees;
+        private System.Windows.Forms.MaskedTextBox textBoxEmail;
     }
 }

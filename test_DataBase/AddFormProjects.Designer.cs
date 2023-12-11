@@ -37,10 +37,10 @@
             this.textBoxBudget = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBoxEndDate = new System.Windows.Forms.TextBox();
-            this.textBoxStartDate = new System.Windows.Forms.TextBox();
             this.labelProdukciya = new System.Windows.Forms.Label();
             this.textBoxProjectName = new System.Windows.Forms.TextBox();
+            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -125,22 +125,6 @@
             this.label17.TabIndex = 28;
             this.label17.Text = "Дата начала:";
             // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Location = new System.Drawing.Point(247, 433);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEndDate.TabIndex = 27;
-            // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Location = new System.Drawing.Point(247, 394);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxStartDate.TabIndex = 26;
-            // 
             // labelProdukciya
             // 
             this.labelProdukciya.AutoSize = true;
@@ -158,19 +142,37 @@
             this.textBoxProjectName.Size = new System.Drawing.Size(391, 33);
             this.textBoxProjectName.TabIndex = 24;
             // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEndDate.Location = new System.Drawing.Point(247, 433);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEndDate.TabIndex = 35;
+            // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxStartDate.Location = new System.Drawing.Point(247, 394);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxStartDate.TabIndex = 34;
+            // 
             // AddFormProjects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
+            this.Controls.Add(this.textBoxEndDate);
+            this.Controls.Add(this.textBoxStartDate);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.textBoxStatus);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBoxBudget);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBoxEndDate);
-            this.Controls.Add(this.textBoxStartDate);
             this.Controls.Add(this.labelProdukciya);
             this.Controls.Add(this.textBoxProjectName);
             this.Controls.Add(this.label1);
@@ -193,9 +195,9 @@
         private System.Windows.Forms.TextBox textBoxBudget;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBoxEndDate;
-        private System.Windows.Forms.TextBox textBoxStartDate;
         private System.Windows.Forms.Label labelProdukciya;
         private System.Windows.Forms.TextBox textBoxProjectName;
+        private System.Windows.Forms.DateTimePicker textBoxEndDate;
+        private System.Windows.Forms.DateTimePicker textBoxStartDate;
     }
 }

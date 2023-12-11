@@ -32,13 +32,13 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBoxContactNumber = new System.Windows.Forms.TextBox();
             this.textBoxContactPerson = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
+            this.textBoxContactNumber = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxEmail = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -80,14 +80,6 @@
             this.label22.TabIndex = 49;
             this.label22.Text = "Email:";
             // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEmail.Location = new System.Drawing.Point(250, 471);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmail.TabIndex = 48;
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -105,14 +97,6 @@
             this.label20.Size = new System.Drawing.Size(96, 13);
             this.label20.TabIndex = 46;
             this.label20.Text = "Контактное лицо:";
-            // 
-            // textBoxContactNumber
-            // 
-            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxContactNumber.Location = new System.Drawing.Point(250, 432);
-            this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
-            this.textBoxContactNumber.TabIndex = 45;
             // 
             // textBoxContactPerson
             // 
@@ -139,16 +123,35 @@
             this.textBoxCustomerName.Size = new System.Drawing.Size(391, 33);
             this.textBoxCustomerName.TabIndex = 42;
             // 
+            // textBoxContactNumber
+            // 
+            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxContactNumber.Location = new System.Drawing.Point(250, 432);
+            this.textBoxContactNumber.Mask = "+7 999 999-99-99";
+            this.textBoxContactNumber.Name = "textBoxContactNumber";
+            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
+            this.textBoxContactNumber.TabIndex = 50;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEmail.Location = new System.Drawing.Point(251, 471);
+            this.textBoxEmail.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PromptChar = ' ';
+            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmail.TabIndex = 51;
+            // 
             // AddFormCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.textBoxContactNumber);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBoxContactNumber);
             this.Controls.Add(this.textBoxContactPerson);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCustomerName);
@@ -167,12 +170,12 @@
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBoxContactNumber;
         private System.Windows.Forms.TextBox textBoxContactPerson;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxCustomerName;
+        private System.Windows.Forms.MaskedTextBox textBoxContactNumber;
+        private System.Windows.Forms.MaskedTextBox textBoxEmail;
     }
 }

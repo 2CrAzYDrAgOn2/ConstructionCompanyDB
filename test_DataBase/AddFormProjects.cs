@@ -25,8 +25,8 @@ namespace test_DataBase
             {
                 dataBase.OpenConnection();
                 var projectName = textBoxProjectName.Text;
-                var startDate = textBoxStartDate.Text;
-                var endDate = textBoxEndDate.Text;
+                var startDate = textBoxStartDate.Value;
+                var endDate = textBoxEndDate.Value;
                 var status = textBoxStatus.Text;
                 if (int.TryParse(textBoxBudget.Text, out int budget))
                 {
