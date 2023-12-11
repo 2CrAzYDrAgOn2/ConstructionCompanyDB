@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panelControl = new System.Windows.Forms.Panel();
             this.buttonPDFProjects = new System.Windows.Forms.Button();
@@ -42,6 +39,8 @@
             this.buttonNewProjects = new System.Windows.Forms.Button();
             this.labelControl = new System.Windows.Forms.Label();
             this.panelRecord = new System.Windows.Forms.Panel();
+            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
+            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
             this.label36 = new System.Windows.Forms.Label();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -72,6 +71,8 @@
             this.buttonNewCustomers = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxEmail = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxContactNumber = new System.Windows.Forms.MaskedTextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -99,6 +100,9 @@
             this.buttonNewEmplpyees = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxEmailEmployees = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            this.textBoxHireDate = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -172,14 +176,6 @@
             this.buttonRefreshProjectMaterials = new System.Windows.Forms.Button();
             this.textBoxSearchProjectMaterials = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.textBoxStartDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxEndDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxContactNumber = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxHireDate = new System.Windows.Forms.DateTimePicker();
-            this.textBoxPhoneNumber = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxEmailEmployees = new System.Windows.Forms.MaskedTextBox();
-            this.textBoxEmail = new System.Windows.Forms.MaskedTextBox();
-            this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panelControl.SuspendLayout();
             this.panelRecord.SuspendLayout();
@@ -207,31 +203,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProjectMaterials)).BeginInit();
             this.panel12.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
-            this.информацияToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(768, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // информацияToolStripMenuItem
-            // 
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.информацияToolStripMenuItem.Text = "Информация";
             // 
             // tabPage1
             // 
@@ -361,6 +332,24 @@
             this.panelRecord.Name = "panelRecord";
             this.panelRecord.Size = new System.Drawing.Size(524, 481);
             this.panelRecord.TabIndex = 2;
+            // 
+            // textBoxEndDate
+            // 
+            this.textBoxEndDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEndDate.Location = new System.Drawing.Point(130, 176);
+            this.textBoxEndDate.Name = "textBoxEndDate";
+            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEndDate.TabIndex = 18;
+            // 
+            // textBoxStartDate
+            // 
+            this.textBoxStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxStartDate.Location = new System.Drawing.Point(130, 137);
+            this.textBoxStartDate.Name = "textBoxStartDate";
+            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxStartDate.TabIndex = 17;
             // 
             // label36
             // 
@@ -541,7 +530,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(769, 900);
@@ -674,6 +663,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(524, 481);
             this.panel2.TabIndex = 2;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEmail.Location = new System.Drawing.Point(130, 215);
+            this.textBoxEmail.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.PromptChar = ' ';
+            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmail.TabIndex = 23;
+            // 
+            // textBoxContactNumber
+            // 
+            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxContactNumber.Location = new System.Drawing.Point(130, 176);
+            this.textBoxContactNumber.Mask = "+7 999 999-99-99";
+            this.textBoxContactNumber.Name = "textBoxContactNumber";
+            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
+            this.textBoxContactNumber.TabIndex = 15;
             // 
             // label22
             // 
@@ -962,6 +970,34 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(524, 481);
             this.panel5.TabIndex = 2;
+            // 
+            // textBoxEmailEmployees
+            // 
+            this.textBoxEmailEmployees.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxEmailEmployees.Location = new System.Drawing.Point(130, 293);
+            this.textBoxEmailEmployees.Mask = "AAAAAAA@AAA.com";
+            this.textBoxEmailEmployees.Name = "textBoxEmailEmployees";
+            this.textBoxEmailEmployees.PromptChar = ' ';
+            this.textBoxEmailEmployees.Size = new System.Drawing.Size(391, 33);
+            this.textBoxEmailEmployees.TabIndex = 22;
+            // 
+            // textBoxPhoneNumber
+            // 
+            this.textBoxPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(130, 332);
+            this.textBoxPhoneNumber.Mask = "+7 999 999-99-99";
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(391, 33);
+            this.textBoxPhoneNumber.TabIndex = 21;
+            // 
+            // textBoxHireDate
+            // 
+            this.textBoxHireDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxHireDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.textBoxHireDate.Location = new System.Drawing.Point(130, 215);
+            this.textBoxHireDate.Name = "textBoxHireDate";
+            this.textBoxHireDate.Size = new System.Drawing.Size(391, 33);
+            this.textBoxHireDate.TabIndex = 20;
             // 
             // label21
             // 
@@ -1700,84 +1736,15 @@
             this.label35.TabIndex = 0;
             this.label35.Text = "Исп. мат.";
             // 
-            // textBoxStartDate
-            // 
-            this.textBoxStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxStartDate.Location = new System.Drawing.Point(130, 137);
-            this.textBoxStartDate.Name = "textBoxStartDate";
-            this.textBoxStartDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxStartDate.TabIndex = 17;
-            // 
-            // textBoxEndDate
-            // 
-            this.textBoxEndDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxEndDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxEndDate.Location = new System.Drawing.Point(130, 176);
-            this.textBoxEndDate.Name = "textBoxEndDate";
-            this.textBoxEndDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEndDate.TabIndex = 18;
-            // 
-            // textBoxContactNumber
-            // 
-            this.textBoxContactNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxContactNumber.Location = new System.Drawing.Point(130, 176);
-            this.textBoxContactNumber.Mask = "+7 999 999-99-99";
-            this.textBoxContactNumber.Name = "textBoxContactNumber";
-            this.textBoxContactNumber.Size = new System.Drawing.Size(391, 33);
-            this.textBoxContactNumber.TabIndex = 15;
-            // 
-            // textBoxHireDate
-            // 
-            this.textBoxHireDate.CalendarFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxHireDate.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxHireDate.Location = new System.Drawing.Point(130, 215);
-            this.textBoxHireDate.Name = "textBoxHireDate";
-            this.textBoxHireDate.Size = new System.Drawing.Size(391, 33);
-            this.textBoxHireDate.TabIndex = 20;
-            // 
-            // textBoxPhoneNumber
-            // 
-            this.textBoxPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(130, 332);
-            this.textBoxPhoneNumber.Mask = "+7 999 999-99-99";
-            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(391, 33);
-            this.textBoxPhoneNumber.TabIndex = 21;
-            // 
-            // textBoxEmailEmployees
-            // 
-            this.textBoxEmailEmployees.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxEmailEmployees.Location = new System.Drawing.Point(130, 293);
-            this.textBoxEmailEmployees.Mask = "AAAAAAA@AAA.com";
-            this.textBoxEmailEmployees.Name = "textBoxEmailEmployees";
-            this.textBoxEmailEmployees.PromptChar = ' ';
-            this.textBoxEmailEmployees.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmailEmployees.TabIndex = 22;
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.textBoxEmail.Location = new System.Drawing.Point(130, 215);
-            this.textBoxEmail.Mask = "AAAAAAA@AAA.com";
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.PromptChar = ' ';
-            this.textBoxEmail.Size = new System.Drawing.Size(391, 33);
-            this.textBoxEmail.TabIndex = 23;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 926);
+            this.ClientSize = new System.Drawing.Size(767, 898);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Туристическая фирма";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.panelControl.ResumeLayout(false);
@@ -1820,15 +1787,10 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panelControl;
         private System.Windows.Forms.Button buttonSaveProjects;

@@ -23,7 +23,6 @@ namespace test_DataBase
         private void Form1_Load(object sender, EventArgs e)
         {
             textBoxPassword.PasswordChar = '•';
-            pictureBoxUnshow.Visible = false;
             textBoxLogin.MaxLength = 50;
             textBoxPassword.MaxLength = 50;
         }
@@ -68,30 +67,6 @@ namespace test_DataBase
         {
             textBoxLogin.Text = "";
             textBoxPassword.Text = "";
-        }
-
-        /// <summary>
-        /// PictureBoxUnshow_Click вызывается при нажатии на кнопку скрыть пароль
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PictureBoxUnshow_Click(object sender, EventArgs e)
-        {
-            textBoxPassword.UseSystemPasswordChar = true;
-            pictureBoxShow.Visible = true;
-            pictureBoxUnshow.Visible = false;
-        }
-
-        /// <summary>
-        /// PictureBoxShow_Click вызывается при нажатии на кнопку показать пароль
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void PictureBoxShow_Click(object sender, EventArgs e)
-        {
-            textBoxPassword.UseSystemPasswordChar = false;
-            pictureBoxShow.Visible = false;
-            pictureBoxUnshow.Visible = true;
         }
 
         /// <summary>

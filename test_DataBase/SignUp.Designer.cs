@@ -35,10 +35,6 @@
             this.labelLogin = new System.Windows.Forms.Label();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.pictureBoxUnshow = new System.Windows.Forms.PictureBox();
-            this.pictureBoxShow = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnshow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).BeginInit();
             this.SuspendLayout();
             // 
             // labelRegister
@@ -109,45 +105,21 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
-            // pictureBoxUnshow
-            // 
-            this.pictureBoxUnshow.Image = global::test_DataBase.Properties.Resources._099hide_99940;
-            this.pictureBoxUnshow.Location = new System.Drawing.Point(663, 210);
-            this.pictureBoxUnshow.Name = "pictureBoxUnshow";
-            this.pictureBoxUnshow.Size = new System.Drawing.Size(93, 93);
-            this.pictureBoxUnshow.TabIndex = 27;
-            this.pictureBoxUnshow.TabStop = false;
-            this.pictureBoxUnshow.Click += new System.EventHandler(this.PictureBoxUnshow_Click);
-            // 
-            // pictureBoxShow
-            // 
-            this.pictureBoxShow.Image = global::test_DataBase.Properties.Resources.eye_visible_hide_hidden_show_icon_145988__3_;
-            this.pictureBoxShow.Location = new System.Drawing.Point(663, 210);
-            this.pictureBoxShow.Name = "pictureBoxShow";
-            this.pictureBoxShow.Size = new System.Drawing.Size(93, 93);
-            this.pictureBoxShow.TabIndex = 26;
-            this.pictureBoxShow.TabStop = false;
-            this.pictureBoxShow.Click += new System.EventHandler(this.PictureBoxShow_Click);
-            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 729);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.pictureBoxShow);
             this.Controls.Add(this.labelRegister);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonCreate);
-            this.Controls.Add(this.pictureBoxUnshow);
             this.Name = "SignUp";
             this.Text = "Регистрация";
             this.Load += new System.EventHandler(this.SignUp_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUnshow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,8 +128,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.PictureBox pictureBoxUnshow;
-        private System.Windows.Forms.PictureBox pictureBoxShow;
         private System.Windows.Forms.Label labelRegister;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxLogin;
