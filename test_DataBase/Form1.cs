@@ -445,7 +445,7 @@ namespace test_DataBase
                             if (rowStateProjects == RowState.Deleted)
                             {
                                 var projectID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Projects where ProjectID = {projectID}";
+                                var deleteQuery = $"delete from Projects where ProjectID = '{projectID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -472,7 +472,7 @@ namespace test_DataBase
                             if (rowStateCustomers == RowState.Deleted)
                             {
                                 var customerID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Customers where CustomerID = {customerID}";
+                                var deleteQuery = $"delete from Customers where CustomerID = '{customerID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -498,7 +498,7 @@ namespace test_DataBase
                             if (rowStateEmployees == RowState.Deleted)
                             {
                                 var employeeID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Employees where EmployeeID = {employeeID}";
+                                var deleteQuery = $"delete from Employees where EmployeeID = '{employeeID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -527,7 +527,7 @@ namespace test_DataBase
                             if (rowStateMaterials == RowState.Deleted)
                             {
                                 var materialID = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
-                                var deleteQuery = $"delete from Materials where CustomerID = {materialID}";
+                                var deleteQuery = $"delete from Materials where CustomerID = '{materialID}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
@@ -553,7 +553,7 @@ namespace test_DataBase
                             {
                                 var projectIDProjectMaterials = Convert.ToInt32(dataGridView.Rows[index].Cells[0].Value);
                                 var materialIDProjectMaterials = Convert.ToInt32(dataGridView.Rows[index].Cells[1].Value);
-                                var deleteQuery = $"delete from ProjectMaterials where ProjectID = {projectIDProjectMaterials}, MaterialID = '{materialIDProjectMaterials}'";
+                                var deleteQuery = $"delete from ProjectMaterials where ProjectID = '{projectIDProjectMaterials}' and MaterialID = '{materialIDProjectMaterials}'";
                                 var sqlCommand = new SqlCommand(deleteQuery, dataBase.GetConnection());
                                 sqlCommand.ExecuteNonQuery();
                             }
