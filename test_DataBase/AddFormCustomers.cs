@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace test_DataBase
 {
