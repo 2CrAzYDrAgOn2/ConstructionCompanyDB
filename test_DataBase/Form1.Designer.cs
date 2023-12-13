@@ -1743,7 +1743,7 @@
             this.ClientSize = new System.Drawing.Size(767, 898);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Туристическая фирма";
+            this.Text = "Строительные работы";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
